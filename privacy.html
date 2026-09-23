@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="navbar"></div>
+<script>
+
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
+<h1>Welcome to the Downsville Ruritan Club website.</h1>
+
+    <p>We understand that privacy online is important to users of our Site, especially when engaging in community activities or conducting business such as building rentals.
+  This statement governs our privacy policies with respect to those users of the Site (“Visitors”) who visit without transacting business and Visitors who register to interact 
+      with the Club or make use of the various services offered by us (collectively, “Services”) (“Authorized Members”).</p>
+
+    <h1>“Personally Identifiable Information”</h1>
+    <p>Refers to any information that identifies or can be used to identify, contact, or locate the person to whom such 
+      information pertains, including, but not limited to, name, address, phone number, and email address. Personally Identifiable 
+      Information does not include information that is collected anonymously (that is, without identification of the individual user) 
+      or demographic information not connected to an identified individual.</p>
+
+    <h1>What Personally Identifiable Information is collected?</h1>
+    <p>We may collect basic user profile information from all of our Visitors. We collect the following additional information from our
+      Authorized Members: the names, addresses, phone numbers, and email addresses of Authorized Members, and the nature of the community 
+      event or building rental the Authorized Member intends to coordinate.</p>
+
+    <h1>What organizations are collecting the information?</h1>
+    <p>In addition to our direct collection of information, our third-party service vendors (such as hosting providers or web analytics 
+      services) may collect this information from our Visitors and Authorized Members. We do not control how these third parties use such 
+      information, but we do ask them to disclose how they use personal information provided to them. Some of these third parties may be 
+      intermediaries that act solely as links in the distribution chain and do not store, retain, or use the information given to them.</p>
+
+    <h1>How does the Site use Personally Identifiable Information?</h1>
+    <p>We use Personally Identifiable Information to customize the Site, to make appropriate service offerings (such as event calendars or 
+      rental availability), and to fulfill community requests on the Site. We may email Visitors and Authorized Members about upcoming events,
+      volunteer opportunities, or information related to the subject matter of the Site. We may also use Personally Identifiable Information to 
+      contact Visitors and Authorized Members in response to specific inquiries, or to provide requested information.</p>
+
+    <h1>With whom may the information be shared?</h1>
+    <p>Personally Identifiable Information about Authorized Members may be shared with Club officers to evaluate potential rentals or membership
+      applications. We may share aggregated information about our Visitors, including demographics, with our affiliated community partners. We 
+      also offer the opportunity to “opt out” of receiving information or being contacted by us.</p>
+
+    <h1>How is Personally Identifiable Information stored?</h1>
+    <p>Personally Identifiable Information collected by the Downsville Ruritan Club is securely stored and is not accessible to third parties
+      or unauthorized volunteers except for use as indicated above.</p>
+
+    <h1>What choices are available to Visitors regarding collection, use, and distribution of the information?</h1>
+    <p>Visitors and Authorized Members may opt out of receiving unsolicited information from or being contacted by us by responding to emails 
+      as instructed, or by contacting us directly at our physical address or through the Site's contact methods.</p>
+
+    <h1>Are Cookies Used on the Site?</h1>
+    <p>Cookies are used for a variety of reasons. We use Cookies to obtain information about the preferences of our Visitors and the services 
+      they select. We also use Cookies for security purposes to protect our Site and Authorized Members.</p>
+
+    <h1>How does the Site use login information?</h1>
+    <p>The Site uses login information, including, but not limited to, IP addresses, ISPs, and browser types, to analyze trends, administer 
+      the Site, track a user’s movement and use, and gather broad demographic information.</p>
+
+    <h1>Disclosure of Personally Identifiable Information to comply with law.</h1>
+    <p>We will disclose Personally Identifiable Information in order to comply with a court order or subpoena or a request from a law
+      enforcement agency to release information. We will also disclose Personally Identifiable Information when reasonably necessary to 
+      protect the safety of our Visitors and Authorized Members.</p>
+
+    <h1>How does the Site keep Personally Identifiable Information secure?</h1>
+    <p>The Personally Identifiable Information of our Visitors and Authorized Members is only accessible to a limited number of qualified 
+      Club officers who are given access in order to perform their duties. While we take commercially reasonable measures to maintain a secure
+      site, electronic communications and databases are subject to errors, tampering, and break-ins, and we cannot guarantee or warrant that 
+      such events will not take place.</p>
+
+    <h1>How can Visitors correct any inaccuracies in Personally Identifiable Information?</h1>
+    <p>Visitors and Authorized Members may contact us to update Personally Identifiable Information about them or to correct any inaccuracies
+      by contacting the Club secretary or using the contact information provided on the Site.</p>
+
+    <h1>Can a Visitor delete or deactivate Personally Identifiable Information collected by the Site?</h1>
+    <p>We provide Visitors and Authorized Members with a mechanism to delete/deactivate Personally Identifiable Information from the Site’s
+      database by contacting our administrators. However, because of backups and records of deletions, it may be impossible to delete a 
+      Visitor’s entry without retaining some residual information. An individual who requests to have Personally Identifiable Information
+      deactivated will have this information functionally deleted.</p>
+
+    <h1>What happens if the Privacy Policy Changes?</h1>
+    <p>We will let our Visitors and Authorized Members know about changes to our privacy policy by posting such changes on the Site.</p>
+
+    <h1>Links:</h1>
+    <p>The Site contains links to other websites. Please note that when you click on one of these links, you are moving to another 
+      website. We encourage you to read the privacy statements of these linked sites as their privacy policies may differ from ours.</p>
+
+    <h1>Contact Us</h1>
+    <p>Downsville Ruritan Club<br>
+    downsvilleRuritan@outlook.com<br>
+    8629 Downsville Pike<br>
+    Williamsport, Maryland 21795</p>
+
+
+  <div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+  <script src="style.js"></script>
+</body>
+</html>

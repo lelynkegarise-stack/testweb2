@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+       <title>Ruritan Mission</title> 
+       
+    </head>
+    <body>
+        <div id="navbar"></div>
+<script>
+
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+</script>
+        <h1>
+            Ruritan Mission
+        </h1>
+        <p>
+        Downsville Ruritan is dedicated to improving local communites and build a better America through Fellowship, Goodwill, and Community service. 
+        Each Ruritan club surveys the needs of its comminuty and works to meet those needs.
+        Downsville Ruritan works with the local boy scout troop 58, Conocochegue little leauge, and football providing facilities for them to meet and practice.
+        We host a wide range of events to provide for christmas for kids, Easter egg hunt, hygine baskets, and other community events. 
+        </p>
+        
+        <h2>
+        <img src ="officer.png" alt="officers" width="100%"><br>
+          Current Officers:<br>  
+        </h2>
+        <ul>
+            <li> President: Brad Kegarise</li>
+            <li> Vice President: Chasity Long</li>
+            <li> Secretary: Amy Kegarise</li>
+            <li> Treasurer: Terri Gross</li>
+            <li> 1 year board member: Dakota Overcash</li>
+            <li> 2 year board member: Lance Shank</li>
+            <li> 3 year board member: Dean Baker</li>
+            <li> Past President: Pat Shank </li>
+        </ul>
+                <div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+        <script src="style.js"></script>
+    </body>
+</html>

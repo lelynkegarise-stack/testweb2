@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="navbar"></div>
+<script>
+
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+</script>
+<h1> Lowball at the Park<br><br>
+<img src="lowball.png" alt="lowball" width="500">
+</h1>
+
+<div class="container">
+
+<div class="left">
+  <br><br>
+<h3>Date & Time</h3>
+       Date: Saturday June 21, 2026<br>
+1:00pm - 4:00pm
+  <br>
+<h1>Description</h1>
+
+<p>
+Come out and enjoy our special community lowball tournament at Byron Memorial Park.<br>
+gambling, free food, and great commpany.<br>
+If you have nay questions reach out to Brad Kegarise at 301-331-6478.<br>
+For more information visit our 
+<a href="https://www.facebook.com/events/2197348824125818">Facebook</a>.
+</p>
+</div>
+
+<div class="right">
+<h3>Location</h3>
+
+
+Byron Memorial Park Pavillion<br>
+11 Park Rd<br>
+Williamsport, MD 21795<br><br>
+
+
+<iframe
+src="https://www.google.com/maps?q=39.5993902,-77.8159998&output=embed"
+width="100%" height="250" style="border:0;">
+</iframe>
+
+</div>
+
+</div>
+    <div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+    <script src="style.js"></script>
+</body>
+</html>

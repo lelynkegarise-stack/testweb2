@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+<script>
+
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+</script>
+
+<h1>Join the Downsville Ruritan Club</h1>
+<p>Please fill out this form and we will contact you soon!</p>
+
+<form action="https://formspree.io/f/mdawarkz" method="post">
+
+  <!-- Name -->
+  <label for="firstName">First Name*</label>
+  <input type="text" id="firstName" name="firstName" required>
+
+  <label for="lastName">Last Name*</label>
+  <input type="text" id="lastName" name="lastName" required>
+
+  <!-- Email -->
+  <label for="email">Email*</label>
+  <input type="email" id="email" name="email" required>
+
+  <!-- Phone -->
+  <label for="phone">Phone</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <!-- Mailing Address -->
+  <label for="street">Street Address*</label>
+  <input type="text" id="street" name="street" >
+
+  <label for="address2">Address Line 2</label>
+  <input type="text" id="address2" name="address2">
+
+  <label for="city">City*</label>
+  <input type="text" id="city" name="city" >
+
+  <label for="state">State*</label>
+  <input type="text" id="state" name="state" >
+
+
+  <label for="zip">ZIP Code*</label>
+  <input type="text" id="zip" name="zip" >
+
+  <label for="reason">tell us a little about why you want to join*</label>
+  <input type="text" id="reason" name="reason" required>
+
+  <button type="submit">Submit</button>
+    <input type="hidden" name="_redirect" value="thankyou.html">
+
+</form>
+      <div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+    <script src="style.js"></script>
+</body>
+</html>

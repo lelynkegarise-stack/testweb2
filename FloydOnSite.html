@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+<div id="navbar"></div>
+<script>
+
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+</script>
+<h1>Floyd Davis on Site Auction<br><br>
+<img src="floyd.png" alt="auction" width="500">
+</h1>
+
+<div class="container">
+
+<div class="left">
+  <br><br><br><br><br><br><br>
+<h3> Time </h3>
+8:00 am-2:00 pm
+<h4>Description</h4>
+<p>
+    Come enjoy Floyd Davis auction and great food from our food trailer <br>
+<br>
+For more information visit Floyd Davis 
+<a href="https://www.facebook.com/cfloyddavis">Facebook</a>.
+</p>
+</div>
+
+<div class="right">
+<h3>Location</h3>
+
+
+
+<iframe
+src=" "
+width="100%" height="250" style="border:0;">
+</iframe>
+
+</div>
+
+</div>
+
+  <div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+  <script src="style.js"></script>
+</body>
+</html>
