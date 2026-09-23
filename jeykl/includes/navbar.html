@@ -1,0 +1,25 @@
+<nav>
+  <div class="logo">
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ '/images/rlogo.png' | relative_url }}" alt="logo">
+    </a>
+  </div>
+
+  <ul class="menu" id="menu">
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li class="dropdown">
+      <a href="{{ '/' | relative_url }}">About Us</a>
+      <ul class="dropdown-content">
+        <li><a href="{{ '/mission.html' | relative_url }}">Our Mission</a></li>
+        <li><a href="{{ '/join.html' | relative_url }}">Join</a></li>
+      </ul>
+    </li>
+    <li><a href="{{ '/calendar.html' | relative_url }}">Calendar</a></li>
+    <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+    <li><a href="{{ '/rentals.html' | relative_url }}">Rentals</a></li>
+    <li id="navSearchContainer">
+      <button id="searchButton">&#128269;</button>
+      <input type="text" id="searchBox" style="display:none;" placeholder="Search...">
+    </li>
+  </ul>
+</nav>
