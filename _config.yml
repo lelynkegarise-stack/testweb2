@@ -1,4 +1,4 @@
 title: Downsville Ruritan Club
 description: Serving Downsville, Maryland and the surrounding area since 1954.
-url: "" # e.g. https://yourdomain.com
-baseurl: "" # Add your repo name here if hosting on GitHub Pages subfolder (e.g., "/repository-name")
+baseurl: "/testweb2"
+url: ""
