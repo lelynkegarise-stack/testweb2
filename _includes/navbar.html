@@ -1,13 +1,29 @@
-<header class="site-header">
-  <div class="navbar-container">
-    <a class="site-logo" href="{{ '/' | relative_url }}">
-      {{ site.title }}
+<nav>
+  <div class="logo">
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ '/images/rlogo.png' | relative_url }}" alt="Downsville Ruritan Club Logo">
     </a>
-    <nav class="site-nav">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/about.html' | relative_url }}">About</a>
-      <a href="{{ '/events.html' | relative_url }}">Events</a>
-      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
-    </nav>
   </div>
-</header>
+
+  <ul class="menu">
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="#">About Us ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="{{ '/officers.html' | relative_url }}">Officers & Directors</a></li>
+        <li><a href="{{ '/history.html' | relative_url }}">Club History</a></li>
+      </ul>
+    </li>
+
+    <li><a href="{{ '/events.html' | relative_url }}">Events Calendar</a></li>
+    <li><a href="{{ '/tipjarWinners.html' | relative_url }}">Tip Jar Winners</a></li>
+    <li><a href="{{ '/rentals.html' | relative_url }}">Building Rental</a></li>
+    <li><a href="{{ '/contact.html' | relative_url }}">Contact Us</a></li>
+  </ul>
+
+  <div id="navSearchContainer">
+    <input type="text" id="searchBox" placeholder="Search...">
+    <button id="searchButton" type="button">🔍</button>
+  </div>
+</nav>
