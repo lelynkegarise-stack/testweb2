@@ -110,12 +110,13 @@ nav {
 
 /* Search Input Box */
 #searchBox {
+    display: none; /* Controlled by toggle in setupSearch() */
     padding: 5px 10px;
     border: 1px solid blue;
     border-radius: 20px;
     outline: none;
     width: 15vw; 
-    min-width: 80px;
+    min-width: 120px;
     max-width: 180px;
     font-size: 14px;
     background-color: white;
