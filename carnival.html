@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-<div id="navbar"></div>
-<script>
-
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-
-</script>
+---
+layout: default
+title: "Carnival"
+---
 <h1>Williamsport Carnival<br><br>
-<img src="carnival.png" alt="carnival" width="500">
+<img src="images/carnival.png" alt="carnival" width="500">
 </h1>
 
 <div class="container">
@@ -55,15 +41,3 @@ width="100%" height="250" style="border:0;">
 </div>
 
 </div>
-
-  <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-  <script src="style.js"></script>
-</body>
-</html>

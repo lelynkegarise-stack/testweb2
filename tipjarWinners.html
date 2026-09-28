@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="format-detection" content="telephone=no">
-  <link rel="stylesheet" href="style.css?v=1.0">
-  <title>Tip Jar Winners</title>
-</head>
-<body>
-<div id="navbar"></div>
+---
+layout: default
+title: "Tip jar winners"
+---
 <div id="tips-container">
 <h1> Carnival Tip Jar Winners 2026</h1>
   <!-- January -->
@@ -182,14 +175,4 @@
   </table>
 </div>
 </table>
-         <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-    <script src="style.js"></script>
-</body>
-</html>
+

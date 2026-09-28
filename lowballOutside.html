@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-<div id="navbar"></div>
-<script>
-
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-
-</script>
+---
+layout: default
+title: "Lowball at the park"
+---
 <h1> Lowball at the Park<br><br>
 <img src="lowball.png" alt="lowball" width="500">
 </h1>
@@ -57,14 +42,4 @@ width="100%" height="250" style="border:0;">
 </div>
 
 </div>
-    <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-    <script src="style.js"></script>
-</body>
-</html>
+
