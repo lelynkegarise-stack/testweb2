@@ -191,7 +191,8 @@ nav {
 /* ==========================
    5. FOOTER
    ========================== */
-#footer, footer {
+
+#footer, footer, .site-footer {
     width: 100% !important;
     display: block !important;
     margin: 0 !important;
@@ -200,12 +201,18 @@ nav {
     clear: both;
 }
 
-.footer-content {
+/* Changed .footer-content to .footer-container */
+.footer-container {
     max-width: 100%;
     margin: 0;
     padding: 20px 5%;
-    color: white;
+    color: white !important;
     text-align: center;
+}
+
+.footer-container p {
+    color: white !important;
+    margin: 5px 0;
 }
 
 /* ==========================
