@@ -1,13 +1,13 @@
 ---
-layout: null
+layout: none
 ---
 [
   {% for page in site.pages %}
-    {% if page.title and page.url != '/404.html' and page.url != '/search.json' %}
+    {% if page.title and page.url != '/search.json' %}
       {
         "title": {{ page.title | jsonify }},
         "url": {{ page.url | relative_url | jsonify }},
-        "content": {{ page.content | strip_html | strip_newlines | jsonify }}
+        "content": {{ page.content | strip_html | strip_newlines | escape | jsonify }}
       }{% unless forloop.last %},{% endunless %}
     {% endif %}
   {% endfor %}
