@@ -1,3 +1,5 @@
+---
+---
 document.addEventListener("DOMContentLoaded", () => {
   setupNavbar();
   setupSearch();
@@ -159,19 +161,11 @@ function runGlobalSearch(query) {
 
 // Helper to reliably fetch search.json across subfolders/GitHub Pages
 function getSearchData() {
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-  let jsonPath = "/search.json";
-
-  if (pathParts.length > 0 && !window.location.hostname.includes("localhost")) {
-    jsonPath = "/" + pathParts[0] + "/search.json";
-  }
-
-  return fetch(jsonPath).then((res) => {
+  const searchJsonUrl = "{{ '/search.json' | relative_url }}";
+  
+  return fetch(searchJsonUrl).then((res) => {
     if (!res.ok) {
-      return fetch("./search.json").then((r) => {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.json();
-      });
+      throw new Error(`HTTP status ${res.status} when fetching ${searchJsonUrl}`);
     }
     return res.json();
   });
