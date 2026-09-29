@@ -23,6 +23,7 @@
   <!-- Footer Include -->
   {% include footer.html %}
 
-  <script src="{{ '/style.js' | relative_url }}"></script>
+  <!-- Added defer attribute to guarantee DOM readiness -->
+  <script src="{{ '/style.js' | relative_url }}" defer></script>
 </body>
 </html>
