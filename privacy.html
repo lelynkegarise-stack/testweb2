@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-<div id="navbar"></div>
-<script>
-
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-</script>
+---
+layout: default
+title: "Privacy"
+---
 <h1>Welcome to the Downsville Ruritan Club website.</h1>
 
     <p>We understand that privacy online is important to users of our Site, especially when engaging in community activities or conducting business such as building rentals.
@@ -99,15 +86,3 @@ fetch("navbar.html")
     8629 Downsville Pike<br>
     Williamsport, Maryland 21795</p>
 
-
-  <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-  <script src="style.js"></script>
-</body>
-</html>

@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-       <title>Ruritan Mission</title> 
-       
-    </head>
-    <body>
-        <div id="navbar"></div>
-<script>
-
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-
-</script>
+---
+layout: default
+title: "Ruritan Mission"
+---
         <h1>
             Ruritan Mission
         </h1>
@@ -42,14 +26,4 @@ fetch("navbar.html")
             <li> 3 year board member: Dean Baker</li>
             <li> Past President: Pat Shank </li>
         </ul>
-                <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-        <script src="style.js"></script>
-    </body>
-</html>
+

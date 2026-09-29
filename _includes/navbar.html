@@ -12,6 +12,8 @@
       <a href="{{ '/index.html' | relative_url }}">About Us ▾</a>
       <ul class="dropdown-content">
         <li><a href="{{ '/mission.html' | relative_url }}">Our Mission</a></li>
+        <li><a href="{{ '/join.html' | relative_url }}">Join</a></li>
+
       </ul>
     </li>
 
@@ -21,7 +23,10 @@
   </ul>
 
   <div id="navSearchContainer">
-    <input type="text" id="searchBox" placeholder="Search...">
-    <button id="searchButton" type="button">🔍</button>
-  </div>
+  <input type="text" id="searchBox" placeholder="Search site..." autocomplete="off">
+  <button id="searchButton" type="button">🔍</button>
+  
+  <!-- Container for live search results -->
+  <ul id="searchResults" class="search-results-dropdown"></ul>
+</div>
 </nav>
