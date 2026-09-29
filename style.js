@@ -187,27 +187,32 @@ function runGlobalSearch(query) {
 }
 
 /* ==========================================================================
-   5. SEARCH DATA FETCH HELPER (Supports Subfolders / GitHub Pages)
+   5. SEARCH DATA FETCH HELPER (Safari-Safe URL Resolution)
    ========================================================================== */
 function getSearchData() {
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-
-  let searchJsonUrl = "/search.json";
-  if (pathParts.length > 0 && !window.location.hostname.includes("localhost")) {
-    searchJsonUrl = "/" + pathParts[0] + "/search.json";
+  // Uses absolute origin path to work on localhost, GitHub Pages subfolders, and custom domains
+  const origin = window.location.origin;
+  const pathPrefix = window.location.pathname.split("/")[1] || "";
+  
+  // If hosted on GitHub Pages subfolder (e.g. username.github.io/repository-name/)
+  let searchUrl = "/search.json";
+  if (pathPrefix && !window.location.hostname.includes("localhost") && !pathPrefix.includes(".")) {
+    searchUrl = `/${pathPrefix}/search.json`;
   }
 
-  return fetch(searchJsonUrl).then((res) => {
-    if (!res.ok) {
-      return fetch("./search.json").then((fallbackRes) => {
-        if (!fallbackRes.ok) {
-          throw new Error("HTTP " + fallbackRes.status);
-        }
-        return fallbackRes.json();
-      });
-    }
-    return res.json();
-  });
+  return fetch(searchUrl)
+    .then((res) => {
+      if (!res.ok) {
+        // Fallback to absolute relative path
+        return fetch(origin + "/search.json").then((fallbackRes) => {
+          if (!fallbackRes.ok) {
+            throw new Error(`HTTP error! status: ${fallbackRes.status}`);
+          }
+          return fallbackRes.json();
+        });
+      }
+      return res.json();
+    });
 }
 
 /* ==========================================================================
