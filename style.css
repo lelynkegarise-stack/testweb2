@@ -629,58 +629,64 @@ textarea {
   color: #cbd5e1;
 }
 /*footer*/
-/* Column Headings */
-.footer-heading {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  border-bottom: 2px solid #38bdf8;
-  display: inline-block;
-  padding-bottom: 0.25rem;
+.site-footer {
+  background-color: #1a202c;
+  color: #e2e8f0;
+  padding: 2rem 1rem 1rem;
+  margin-top: 3rem;
+  text-align: center;
 }
 
-/* Navigation Lists & Links */
-.footer-links {
-  list-style: none;
-  padding: 0;
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.footer-address {
+  font-size: 0.9rem;
+  color: #a0aec0;
   margin: 0;
 }
 
-.footer-links li {
-  margin-bottom: 0.5rem;
+.footer-links-simple {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.footer-links a,
-.footer-contact a {
-  color: #cbd5e1;
+.footer-links-simple a {
+  color: #cbd5e0;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
+  font-size: 0.95rem;
 }
 
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: #38bdf8;
+.footer-links-simple a:hover {
+  color: #63b3ed;
   text-decoration: underline;
 }
 
-.footer-contact {
-  font-style: normal;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #cbd5e1;
+.footer-links-simple .divider {
+  color: #4a5568;
 }
 
-/* Copyright Bar */
 .footer-bottom {
-  max-width: 1200px;
-  margin: 2.5rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid #334155;
-  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #2d3748;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #a0aec0;
 }
 
 /* ==========================
