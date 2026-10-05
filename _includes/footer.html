@@ -1,30 +1,49 @@
 <footer class="site-footer">
   <div class="footer-container">
-    <div class="footer-columns">
-      <div>
-        <h3>Downsville Ruritan Club</h3>
-        <p>Community service, fellowship, and goodwill for Downsville, Maryland and surrounding communities.</p>
+    <!-- Brand / Overview Section -->
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Downsville Ruritan Club Logo" width="40" height="40" />
+        <span class="brand-name">Downsville Ruritan Club</span>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/mission.html' | relative_url }}">Mission</a></li>
-          <li><a href="{{ '/calendar.html' | relative_url }}">Events</a></li>
-          <li><a href="{{ '/join.html' | relative_url }}">Join Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>8629 Downsville Pike<br>Williamsport, MD 21795</p>
-        <p><a href="{{ '/contact.html' | relative_url }}">Contact Page</a></p>
-      </div>
-      <div>
-        <h4>Follow</h4>
-        <p><a href="https://www.facebook.com/DownsvilleRuritan" target="_blank" rel="noopener noreferrer">Facebook</a></p>
-        <p><a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a></p>
-      </div>
+      <p class="brand-desc">
+        Dedicated to community service, fellowship, and goodwill for Downsville, MD, and surrounding areas.
+      </p>
     </div>
-    <p class="copyright">&copy; {{ "now" | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+
+    <!-- Navigation Links -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Mission & Goals</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="join.html">Join Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Get in Touch</h4>
+      <address class="footer-contact">
+        <p>📍 8629 Downsville Pike<br>Williamsport, MD 21795</p>
+        <p>✉️ <a href="contact.html">Contact Us</a></p>
+      </address>
+    </div>
+
+    <!-- Social & Legal -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Connect</h4>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+      </div>
+      <ul class="footer-links legal-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Downsville Ruritan Club. All rights reserved.</p>
   </div>
 </footer>
