@@ -5,37 +5,90 @@ description: "Downsville Ruritan Club serves Downsville, Maryland and the surrou
 keywords: "Downsville Ruritan Club, Downsville Maryland community service, Williamsport Maryland community group, local nonprofit, volunteer club, fellowship and goodwill"
 ---
 
-<div class="intro">
-  <h1>Welcome to the Downsville Ruritan Club!</h1>
-  <img src="{{ '/images/rlogo.png' | relative_url }}" alt="Downsville Ruritan Club Logo" class="logo1">
-  <p>
-    Serving Downsville, Maryland and the surrounding area since 1954. Ruritans’ purpose is to create a better understanding among people and improve America’s communities through volunteer community service. Our slogan is "Fellowship, Goodwill, and Community Service." People of all occupations, social positions, and backgrounds are encouraged to join.
-  </p>
-</div>
-
-<section class="location-container" aria-label="Downsville Ruritan Club location and service area">
-  <div class="location-content">
-    <div class="location-text">
-      <h2>Serving Downsville, Williamsport, and the Surrounding Community</h2>
-      <p>
-        The Downsville Ruritan Club is a local community organization helping people in Downsville, Maryland and nearby communities in Washington County. We are focused on fellowship, goodwill, and practical community service that strengthens the area for families, neighbors, and visitors.
-      </p>
-      <p>
-        Our community building and mailing address is located at:<br>
-        8629 Downsville Pike, Williamsport, Maryland 21795
-      </p>
-    </div>
-
-    <div class="button-container"></div>
-
-    <div class="location-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.395219312246!2d-77.779747184623!3d39.58825497948585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c9f104e3fba97f%3A0[...]
-        width="100%" height="250" style="border:0;" loading="lazy" allowfullscreen="" title="Downsville Ruritan Club map location">
-      </iframe>
+<header class="intro" role="banner">
+  <div class="intro-content">
+    <p class="eyebrow">Community Service • Fellowship • Goodwill</p>
+    <h1>Welcome to the Downsville Ruritan Club!</h1>
+    <img src="{{ '/images/rlogo.png' | relative_url }}" alt="Downsville Ruritan Club logo" class="logo1">
+    <p>
+      Serving Downsville, Maryland and the surrounding area since 1954. Ruritans’ purpose is to create a better understanding among people and improve America’s communities through volunteer community service, fellowship, and goodwill.
+    </p>
+    <div class="btn-row">
+      <a class="button" href="{{ '/join.html' | relative_url }}">Join Our Community</a>
+      <a class="button secondary" href="{{ '/mission.html' | relative_url }}">Learn Our Mission</a>
     </div>
   </div>
-</section>
+</header>
+
+<main>
+  <section class="highlights" aria-label="Club highlights">
+    <div class="highlight-grid">
+      <article class="highlight-card">
+        <h2>Community Service</h2>
+        <p>We support local initiatives and volunteer efforts that make Downsville and nearby communities stronger and more connected.</p>
+      </article>
+      <article class="highlight-card">
+        <h2>Fellowship</h2>
+        <p>We bring people together through meaningful connections, shared events, and a welcoming local spirit.</p>
+      </article>
+      <article class="highlight-card">
+        <h2>Goodwill</h2>
+        <p>Our mission is rooted in service, volunteerism, and creating positive impact for neighbors across the area.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="location-container" aria-label="Downsville Ruritan Club location and service area">
+    <div class="location-content">
+      <div class="location-text">
+        <h2>Serving Downsville, Williamsport, and the Surrounding Community</h2>
+        <p>
+          The Downsville Ruritan Club is a local community organization helping people in Downsville, Maryland and nearby communities in Washington County. We are focused on fellowship, goodwill, and practical community service that improves daily life for families and neighbors.
+        </p>
+        <p>
+          Our community building and mailing address is located at:<br>
+          <strong>8629 Downsville Pike<br>
+          Williamsport, Maryland 21795</strong>
+        </p>
+        <div class="btn-row left-align">
+          <a class="button" href="{{ '/contact.html' | relative_url }}">Get In Touch</a>
+          <a class="button secondary" href="{{ '/calendar.html' | relative_url }}">View Events</a>
+        </div>
+      </div>
+
+      <div class="location-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.395219312246!2d-77.779747184623!3d39.58825497948585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c9f104e3fba97f%3A0x42f5d3ca61c835f6!2s8629%20Downsville%20Pike%2C%20Williamsport%2C%20MD%2021795!5e0!3m2!1sen!2sus!4v1700000000000"
+          width="100" height="350" style="border:0;" loading="lazy" allowfullscreen="" title="Downsville Ruritan Club map location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-links" aria-label="Quick access to important club pages">
+    <div class="quick-links-container">
+      <h2>Explore Our Club</h2>
+      <div class="links-grid">
+        <article class="link-card">
+          <h3><a href="{{ '/mission.html' | relative_url }}">Our Mission</a></h3>
+          <p>Learn about our values and commitment to building stronger communities.</p>
+        </article>
+        <article class="link-card">
+          <h3><a href="{{ '/calendar.html' | relative_url }}">Event Calendar</a></h3>
+          <p>See local programs, gatherings, and community events happening throughout the year.</p>
+        </article>
+        <article class="link-card">
+          <h3><a href="{{ '/join.html' | relative_url }}">Join Us</a></h3>
+          <p>Become part of our growing network of residents, volunteers, and community leaders.</p>
+        </article>
+        <article class="link-card">
+          <h3><a href="{{ '/rentals.html' | relative_url }}">Facility Rentals</a></h3>
+          <p>Host your next event in a welcoming space for your family, group, or organization.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
 
 <script type="application/ld+json">
 {
@@ -54,6 +107,7 @@ keywords: "Downsville Ruritan Club, Downsville Maryland community service, Willi
   },
   "foundingDate": "1954",
   "areaServed": ["Downsville, Maryland", "Williamsport, Maryland", "Washington County, Maryland"],
-  "image": "https://downsvilleruritan.com/images/rlogo.png"
+  "image": "https://downsvilleruritan.com/images/rlogo.png",
+  "logo": "https://downsvilleruritan.com/images/rlogo.png"
 }
 </script>
