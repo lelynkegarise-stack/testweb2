@@ -1,9 +1,30 @@
- <footer class="site-footer">
+<footer class="site-footer">
   <div class="footer-container">
-    <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-    <p>
-     <a href="https://www.facebook.com/DownsvilleRuritan">Facebook </a>
-     <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
-    </p>
+    <div class="footer-columns">
+      <div>
+        <h3>Downsville Ruritan Club</h3>
+        <p>Community service, fellowship, and goodwill for Downsville, Maryland and surrounding communities.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/mission.html' | relative_url }}">Mission</a></li>
+          <li><a href="{{ '/calendar.html' | relative_url }}">Events</a></li>
+          <li><a href="{{ '/join.html' | relative_url }}">Join Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>8629 Downsville Pike<br>Williamsport, MD 21795</p>
+        <p><a href="{{ '/contact.html' | relative_url }}">Contact Page</a></p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <p><a href="https://www.facebook.com/DownsvilleRuritan" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        <p><a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a></p>
+      </div>
+    </div>
+    <p class="copyright">&copy; {{ "now" | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
   </div>
-</footer> 
+</footer>
