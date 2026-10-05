@@ -219,15 +219,28 @@ function initCalendar() {
   );
 
   months.forEach((month) => {
+    const table = month.querySelector(".month-table");
+    const button = month.querySelector(".month-toggle");
+
+    if (table) {
+      table.classList.add("show");
+    }
+    if (button) {
+      button.classList.add("is-open");
+    }
+
     container.appendChild(month);
   });
 
   container.addEventListener("click", (event) => {
-    if (event.target.classList.contains("month-toggle")) {
-      const table = event.target.nextElementSibling;
-      if (table) {
-        table.classList.toggle("show");
-      }
-    }
+    const toggle = event.target.closest(".month-toggle");
+    if (!toggle) return;
+
+    const table = toggle.nextElementSibling;
+    if (!table) return;
+
+    const opened = table.classList.contains("show");
+    table.classList.toggle("show", !opened);
+    toggle.classList.toggle("is-open", !opened);
   });
 }
