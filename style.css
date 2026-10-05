@@ -708,4 +708,16 @@ textarea {
   #searchBox {
     width: 160px;
   }
+   /* Force-remove list styling for main menu and dropdowns */
+nav ul,
+nav li,
+ul.menu,
+ul.menu li,
+ul.dropdown-content,
+ul.dropdown-content li {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0;
+  padding: 0;
+}
 }
