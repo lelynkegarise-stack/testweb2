@@ -123,11 +123,7 @@ function fetchLiveResults(query) {
 
           let safeUrl = "#";
           if (match.url) {
-            try {
-              safeUrl = encodeURI(String(match.url).trim());
-            } catch (err) {
-              safeUrl = String(match.url).trim();
-            }
+            safeUrl = match.url.startsWith("/") ? match.url : "/" + match.url;
           }
 
           link.href = safeUrl;
@@ -165,7 +161,8 @@ function runGlobalSearch(query) {
       });
 
       if (match && match.url) {
-        window.location.href = encodeURI(String(match.url).trim());
+        const targetUrl = match.url.startsWith("/") ? match.url : "/" + match.url;
+        window.location.href = targetUrl;
       } else {
         alert("Sorry! Couldn't find anything for '" + query + "'");
         const months = document.querySelectorAll(".month");
@@ -180,29 +177,17 @@ function runGlobalSearch(query) {
     });
 }
 
+// Fixed getSearchData to always fetch root /search.json cleanly
 function getSearchData() {
-  const origin = window.location.origin;
-  const pathSegments = window.location.pathname.split("/").filter(Boolean);
-
-  let searchUrl = "/search.json";
-  if (pathSegments.length > 0 && !window.location.hostname.includes("localhost")) {
-    searchUrl = `/${pathSegments[0]}/search.json`;
-  }
-
-  return fetch(searchUrl)
+  return fetch("/search.json")
     .then((response) => {
       if (!response.ok) {
-        return fetch(`${origin}/search.json`).then((fallbackResponse) => {
-          if (!fallbackResponse.ok) {
-            throw new Error(`HTTP error! status: ${fallbackResponse.status}`);
-          }
-          return fallbackResponse.json();
-        });
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.json();
     })
     .catch((error) => {
-      console.error("Fetch helper error:", error);
+      console.error("Fetch search.json error:", error);
       return [];
     });
 }
