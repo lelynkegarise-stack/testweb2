@@ -5,77 +5,68 @@ description: "Contact the Downsville Ruritan Club in Williamsport, MD. Reach out
 keywords: "Downsville Ruritan Club contact, Williamsport Maryland community service, contact form, Brad Kegarise, Chasity Long, local organization"
 ---
 
-<style>
-  .contact-form {
-    max-width: 500px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
-  }
-  .contact-form label {
-    display: block;
-    margin-top: 12px;
-    font-weight: bold;
-  }
-  .contact-form input, 
-  .contact-form select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    box-sizing: border-box;
-  }
-  .contact-form button {
-    margin-top: 16px;
-    padding: 10px 20px;
-    background: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .contact-header {
-    text-align: center;
-    margin-bottom: 24px;
-  }
-</style>
+<main class="page-shell">
+  <header class="page-header">
+    <div class="page-header-inner">
+      <p class="eyebrow">Get in Touch</p>
+      <h1>Contact the Downsville Ruritan Club</h1>
+      <p>Questions about membership, events, rentals, or community service? We’d love to hear from you.</p>
+    </div>
+  </header>
 
-<div class="contact-container">
-  <div class="contact-header">
-    <h1>Contact the Downsville Ruritan Club</h1>
-    <p>Have questions about our events, membership, or community service programs? Get in touch with us today. We're located in Williamsport, Maryland and serve the Downsville area.</p>
-    <p>You can reach out directly to our officers:</p>
-    <p>
-      <strong>Brad Kegarise (President):</strong> 301-331-6478<br>
-      <strong>Chasity Long (Vice President):</strong> 301-331-0427
-    </p>
-    <p>Or fill out the form below and we will contact you soon!</p>
-  </div>
+  <section class="content-section">
+    <div class="content-panel contact-panel">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2>Club Information</h2>
+          <p><strong>Address:</strong><br>8629 Downsville Pike<br>Williamsport, Maryland 21795</p>
+          <p><strong>President:</strong> Brad Kegarise<br>301-331-6478</p>
+          <p><strong>Vice President:</strong> Chasity Long<br>301-331-0427</p>
+        </div>
 
-  <form class="contact-form" action="https://formspree.io/f/mjgajrwb" method="post">
+        <div class="contact-card">
+          <h2>Hours & Availability</h2>
+          <p>We are available for community questions, event inquiries, and building rental conversations during standard business hours.</p>
+          <p><strong>Typical availability:</strong><br>Monday–Friday: 9:00 AM–5:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- First Name -->
-    <label for="firstName">First Name*</label>
-    <input type="text" id="firstName" name="firstName" required>
+  <section class="content-section">
+    <div class="content-panel form-panel">
+      <h2>Send Us a Message</h2>
+      <form action="https://formspree.io/f/mjgajrwb" method="post" class="standard-form">
+        <div class="form-grid two-col">
+          <div>
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div>
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+          <div>
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone*</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="full-width">
+            <label for="reason">Reason for Contact*</label>
+            <input type="text" id="reason" name="reason" required>
+          </div>
+          <div class="full-width">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+        </div>
 
-    <!-- Last Name -->
-    <label for="lastName">Last Name*</label>
-    <input type="text" id="lastName" name="lastName" required>
-
-    <!-- Email -->
-    <label for="email">Email*</label>
-    <input type="email" id="email" name="email" required>
-
-    <!-- Phone -->
-    <label for="phone">Phone*</label>
-    <input type="tel" id="phone" name="phone" required>
-
-    <!-- Reason -->
-    <label for="reason">Reason for Contact*</label>
-    <input type="text" id="reason" name="reason" required>
-
-    <button type="submit">Send Message</button>
-
-    <!-- Redirect Page After Submission -->
-    <input type="hidden" name="_next" value="{{ '/thankyou.html' | relative_url }}">
-
-  </form>
-</div>
+        <button type="submit" class="button">Send Message</button>
+        <input type="hidden" name="_next" value="{{ '/thanks.html' | relative_url }}">
+      </form>
+    </div>
+  </section>
+</main>
