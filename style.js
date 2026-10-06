@@ -7,8 +7,13 @@ function initApp() {
 }
 
 function setupNavbar() {
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
+  // Supports both id="hamburger" and class="hamburger" / class="menu-toggle"
+  const hamburger = document.getElementById("hamburger") || 
+                    document.querySelector(".hamburger") || 
+                    document.querySelector(".menu-toggle");
+  
+  // Supports both id="menu" and class="menu"
+  const menu = document.getElementById("menu") || document.querySelector(".menu");
 
   if (hamburger && menu) {
     hamburger.addEventListener("click", () => {
@@ -16,6 +21,7 @@ function setupNavbar() {
     });
   }
 
+  // Handle mobile dropdown clicks
   document.querySelectorAll(".dropdown > a").forEach((link) => {
     link.addEventListener("click", (e) => {
       if (window.innerWidth <= 950) {
