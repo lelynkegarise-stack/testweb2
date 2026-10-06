@@ -46,7 +46,8 @@ main {
 }
 
 /* ========================== Distinct Navbar ========================== */
-header{
+/* ========================== Distinct Navbar ========================== */
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -65,8 +66,10 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.85rem 1.5rem;
+  position: relative;
 }
 
+/* Reset default lists */
 nav ul, 
 nav li, 
 ul.menu, 
@@ -91,7 +94,7 @@ ul.dropdown-content li {
   display: block;
 }
 
-/* Navigation Menu */
+/* Navigation Menu (Desktop Default) */
 .menu {
   display: flex;
   align-items: center;
@@ -104,7 +107,7 @@ ul.dropdown-content li {
 
 .menu li a {
   text-decoration: none;
-  color: #ffffff !important;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
@@ -148,8 +151,11 @@ ul.dropdown-content li {
   color: var(--brand-blue);
 }
 
-/* Hamburger & Toggle Buttons */
-.hamburger, #hamburger, .menu-toggle {
+/* Hamburger & Toggle Buttons (Updated Selectors) */
+.hamburger, 
+#hamburger, 
+.nav-toggle, 
+.menu-toggle {
   background: transparent !important;
   border: none !important;
   outline: none !important;
@@ -159,10 +165,7 @@ ul.dropdown-content li {
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   line-height: 1;
-}
-
-.hamburger::before, .hamburger::after {
-  content: none !important;
+  display: none; /* Hidden on desktop */
 }
 
 /* ========================== Fixed Search Bar ========================== */
@@ -238,6 +241,34 @@ ul.dropdown-content li {
 #searchResults li a:hover {
   background: var(--bg-soft);
   color: var(--brand-blue);
+}
+
+/* ========================== Mobile Responsive Rules ========================== */
+@media (max-width: 768px) {
+  .hamburger, 
+  #hamburger, 
+  .nav-toggle {
+    display: block; /* Show menu toggle on mobile screens */
+  }
+
+  .menu {
+    display: none; /* Hide desktop menu by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--brand-blue-dark);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 1rem;
+  }
+
+  /* Triggered when JS toggles the class */
+  .menu.show,
+  .menu.active {
+    display: flex !important;
+  }
 }
 
 /* ========================== Hero Intro ========================== */
