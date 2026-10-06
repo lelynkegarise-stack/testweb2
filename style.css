@@ -45,19 +45,23 @@ main {
   padding: 3rem 1.5rem;
 }
 
-/* ========================== Seamless Header & Navbar ========================== */
+/* ========================== Distinct Navbar ========================== */
+header, nav {
+  background: var(--brand-blue-dark);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.25rem 1.5rem;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  padding: 0.85rem 1.5rem;
 }
 
 nav ul, 
@@ -72,15 +76,26 @@ ul.dropdown-content li {
   padding: 0;
 }
 
-.logo img {
-  height: 48px;
-  width: auto;
+/* Centered Logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
+.logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Navigation Menu */
 .menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .menu li {
@@ -89,16 +104,18 @@ ul.dropdown-content li {
 
 .menu li a {
   text-decoration: none;
-  color: var(--brand-blue-dark);
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
+  padding: 0.4rem 0;
 }
 
 .menu li a:hover {
-  color: var(--brand-blue);
+  color: var(--brand-gold);
 }
 
+/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -109,11 +126,11 @@ ul.dropdown-content li {
   left: 0;
   background: var(--white);
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   padding: 0.5rem 0;
   display: none;
-  min-width: 180px;
-  z-index: 10;
+  min-width: 190px;
+  z-index: 100;
 }
 
 .dropdown:hover .dropdown-content {
@@ -123,6 +140,104 @@ ul.dropdown-content li {
 .dropdown-content li a {
   padding: 0.6rem 1.2rem;
   display: block;
+  color: var(--text);
+}
+
+.dropdown-content li a:hover {
+  background: var(--bg-soft);
+  color: var(--brand-blue);
+}
+
+/* Remove weird dash/button outline */
+.hamburger, #hamburger, .menu-toggle {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+.hamburger::before, .hamburger::after {
+  content: none !important;
+}
+
+/* ========================== Fixed Search Bar ========================== */
+#navSearchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#searchButton {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+#searchButton:hover {
+  color: var(--brand-gold);
+}
+
+#searchBox {
+  display: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#searchBox::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#searchBox:focus {
+  background: #ffffff;
+  color: var(--text);
+  border-color: var(--brand-gold);
+}
+
+#searchResults {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 260px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  display: none;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#searchResults li a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+#searchResults li a:hover {
+  background: var(--bg-soft);
+  color: var(--brand-blue);
 }
 
 /* ========================== Hero Intro (Unboxed) ========================== */
@@ -266,10 +381,80 @@ ul.dropdown-content li {
   background: var(--brand-blue-dark);
 }
 
+/* Styled Event Tables */
 .month-table {
   display: none;
   width: 100%;
   max-width: 800px;
-  margin: 1rem auto 0 auto;
+  margin: 0.75rem auto 0 auto;
   border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.month-table.show {
+  display: table !important;
+}
+
+.month-table th {
+  background-color: var(--bg-soft);
+  color: var(--brand-blue-dark);
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+
+.month-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-align: left;
+}
+
+.month-table tbody tr:nth-child(even) {
+  background-color: #fcfdfe;
+}
+
+.month-table tbody tr:hover {
+  background-color: var(--bg-soft);
+}
+
+/* ========================== Distinct & Centered Footer ========================== */
+footer, .site-footer {
+  background: #1e293b;
+  color: #f1f5f9;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-top: 4rem;
+  border-top: 4px solid var(--brand-gold);
+}
+
+footer p, .site-footer p {
+  margin: 0.5rem 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+footer a, .site-footer a {
+  color: var(--brand-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover, .site-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
