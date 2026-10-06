@@ -179,11 +179,14 @@ function runGlobalSearch(query) {
 
 // Fixed getSearchData to always fetch root /search.json cleanly
 function getSearchData() {
-  return fetch("/search.json")
+  // Uses relative path so it works both locally and on GitHub Pages subpaths
+  const searchUrl = window.location.pathname.includes('/testweb2') 
+    ? '/testweb2/search.json' 
+    : './search.json';
+
+  return fetch(searchUrl)
     .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
     })
     .catch((error) => {
@@ -196,6 +199,7 @@ function initCalendar() {
   const container = document.getElementById("months-container");
   if (!container) return;
 
+  // Sort months chronologically by data-month attribute
   const months = Array.from(container.querySelectorAll(".month"));
   months.sort((a, b) =>
     (a.getAttribute("data-month") || "").localeCompare(
@@ -203,19 +207,25 @@ function initCalendar() {
     )
   );
 
+  // Re-append sorted months to the container
   months.forEach((month) => {
-    const table = month.querySelector(".month-table");
-    const button = month.querySelector(".month-toggle");
-
-    if (table) {
-      table.classList.add("show");
-    }
-    if (button) {
-      button.classList.add("is-open");
-    }
-
     container.appendChild(month);
   });
+
+  // Handle accordion toggle clicks (opens/closes tables when clicked)
+  container.addEventListener("click", (event) => {
+    const toggle = event.target.closest(".month-toggle");
+    if (!toggle) return;
+
+    const monthDiv = toggle.closest(".month");
+    const table = monthDiv ? monthDiv.querySelector(".month-table") : null;
+
+    if (table) {
+      table.classList.toggle("show");
+      toggle.classList.toggle("is-open");
+    }
+  });
+}
 
   container.addEventListener("click", (event) => {
     const toggle = event.target.closest(".month-toggle");
