@@ -201,3 +201,5 @@ function initCalendar() {
     if (table) {
       const isHidden = getComputedStyle(table).display === "none";
       table.style.display
+    }
+  });
