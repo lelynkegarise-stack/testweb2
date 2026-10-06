@@ -188,12 +188,12 @@ function initCalendar() {
     )
   );
 
-  // Re-append sorted months to the container
+  // Re-append sorted months
   months.forEach((month) => {
     container.appendChild(month);
   });
 
-  // Handle accordion toggle clicks (opens/closes tables when clicked)
+  // Handle accordion toggle clicks
   container.addEventListener("click", (event) => {
     const toggle = event.target.closest(".month-toggle");
     if (!toggle) return;
@@ -202,8 +202,10 @@ function initCalendar() {
     const table = monthDiv ? monthDiv.querySelector(".month-table") : null;
 
     if (table) {
-      table.classList.toggle("show");
-      toggle.classList.toggle("is-open");
+      // Toggle inline display property directly
+      const isHidden = getComputedStyle(table).display === "none";
+      table.style.display = isHidden ? "table" : "none";
+      toggle.classList.toggle("is-open", isHidden);
     }
   });
 }
