@@ -63,6 +63,23 @@ function setupSearch() {
     fetchLiveResults(query);
   });
 
+// Handle typing in search box
+  box.addEventListener("input", () => {
+    const query = box.value.trim().toLowerCase();
+
+    // If query is cleared, hide dropdown and unhide calendar months
+    if (!query) {
+      if (resultsDropdown) resultsDropdown.style.display = "none";
+      document.querySelectorAll(".month").forEach((month) => {
+        month.style.display = "";
+      });
+      return;
+    }
+
+    fetchLiveResults(query);
+  });
+
+  // Handle Enter keypress
   box.addEventListener("keypress", (event) => {
     if (event.key !== "Enter") return;
 
@@ -70,22 +87,8 @@ function setupSearch() {
     const query = box.value.trim().toLowerCase();
     if (!query) return;
 
-    if (window.location.pathname.includes("calendar")) {
-      const months = document.querySelectorAll(".month");
-      let foundMatch = false;
-
-      months.forEach((month) => {
-        const monthText = month.innerText.toLowerCase();
-        const table = month.querySelector(".month-table");
-
-        if (monthText.includes(query)) {
-          month.style.display = "block";
-          foundMatch = true;
-          if (table) table.classList.add("show");
-        } else {
-          month.style.display = "none";
-        }
-      });
+    runGlobalSearch(query);
+  });
 
       if (!foundMatch) {
         runGlobalSearch(query);
