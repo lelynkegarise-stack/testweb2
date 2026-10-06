@@ -234,43 +234,72 @@ ul.dropdown-content li {
 }
 
 /* ========================== Centered Events Calendar ========================== */
+
 #months-container {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .month {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto 1.5rem auto;
+  margin-bottom: 1.5rem;
 }
 
 .month-toggle {
   width: 100%;
-  padding: 1rem 1.25rem;
-  background: var(--brand-blue);
-  color: #ffffff;
+  padding: 1.25rem;
+  background: var(--primary);
+  color: var(--white);
   border: none;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  text-align: center;
-  border-radius: 12px;
-  transition: background 0.2s ease;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
 }
 
 .month-toggle:hover {
-  background: var(--brand-blue-dark);
+  background: var(--primary-dark);
+  transform: translateX(4px);
 }
 
 .month-table {
   display: none;
   width: 100%;
-  max-width: 800px;
-  margin: 1rem auto 0 auto;
+  margin-top: 0.75rem;
   border-collapse: collapse;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
+
+.month-table.show {
+  display: table !important;
+}
+
+.month-table th {
+  background: var(--primary-light);
+  color: var(--white);
+  font-weight: 700;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.month-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.month-table tbody tr:hover {
+  background: var(--bg-soft);
+}
+
+.month-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
