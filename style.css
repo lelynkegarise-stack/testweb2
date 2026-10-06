@@ -26,7 +26,7 @@ body {
   background: var(--bg-page);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
+  padding-top: 70px
 }
 
 a {
@@ -43,14 +43,17 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem;
+  overflow-x: hidden;
 }
 
 /* ========================== Distinct Navbar ========================== */
-header, nav {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: var(--brand-blue-dark);
   color: var(--white);
-  position: sticky;
-  top: 0;
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
