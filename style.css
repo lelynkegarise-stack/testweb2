@@ -26,7 +26,7 @@ body {
   background: var(--bg-page);
   color: var(--text);
   line-height: 1.6;
-  padding-top: 70px
+  padding-top: 70px; /* Space so fixed navbar doesn't cover top page content */
 }
 
 a {
@@ -43,7 +43,6 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  overflow-x: hidden;
 }
 
 /* ========================== Distinct Navbar ========================== */
@@ -54,7 +53,7 @@ header {
   width: 100%;
   background: var(--brand-blue-dark);
   color: var(--white);
-  z-index: 999;
+  z-index: 9999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -151,7 +150,7 @@ ul.dropdown-content li {
   color: var(--brand-blue);
 }
 
-/* Remove weird dash/button outline */
+/* Hamburger & Toggle Buttons */
 .hamburger, #hamburger, .menu-toggle {
   background: transparent !important;
   border: none !important;
@@ -243,7 +242,7 @@ ul.dropdown-content li {
   color: var(--brand-blue);
 }
 
-/* ========================== Hero Intro (Unboxed) ========================== */
+/* ========================== Hero Intro ========================== */
 .intro {
   text-align: center;
   padding: 4rem 1.5rem 3rem;
@@ -314,7 +313,7 @@ ul.dropdown-content li {
   border-color: var(--brand-blue);
 }
 
-/* ========================== Flowing Highlight Cards ========================== */
+/* ========================== Highlight Cards ========================== */
 .highlights {
   margin: 4rem 0;
 }
@@ -350,7 +349,7 @@ ul.dropdown-content li {
   font-size: 0.975rem;
 }
 
-/* ========================== Centered Events Calendar ========================== */
+/* ========================== Events Calendar ========================== */
 #months-container {
   max-width: 900px;
   margin: 0 auto;
@@ -384,7 +383,6 @@ ul.dropdown-content li {
   background: var(--brand-blue-dark);
 }
 
-/* Styled Event Tables */
 .month-table {
   display: none;
   width: 100%;
@@ -425,7 +423,7 @@ ul.dropdown-content li {
   background-color: var(--bg-soft);
 }
 
-/* ========================== Distinct & Centered Footer ========================== */
+/* ========================== Footer ========================== */
 footer, .site-footer {
   background: #1e293b;
   color: #f1f5f9;
