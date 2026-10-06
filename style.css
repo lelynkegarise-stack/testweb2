@@ -47,7 +47,7 @@ main {
 }
 
 /* ========================== Distinct Navbar ========================== */
-header {
+header, nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -56,15 +56,6 @@ header {
   color: var(--white);
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0.85rem 1.5rem;
 }
 
 nav ul, 
