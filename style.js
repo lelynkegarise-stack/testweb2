@@ -7,12 +7,10 @@ function initApp() {
 }
 
 function setupNavbar() {
-  // Supports both id="hamburger" and class="hamburger" / class="menu-toggle"
   const hamburger = document.getElementById("hamburger") || 
                     document.querySelector(".hamburger") || 
                     document.querySelector(".menu-toggle");
   
-  // Supports both id="menu" and class="menu"
   const menu = document.getElementById("menu") || document.querySelector(".menu");
 
   if (hamburger && menu) {
@@ -21,7 +19,7 @@ function setupNavbar() {
     });
   }
 
-  // Handle mobile dropdown clicks
+  // Mobile dropdown toggles
   document.querySelectorAll(".dropdown > a").forEach((link) => {
     link.addEventListener("click", (e) => {
       if (window.innerWidth <= 950) {
@@ -38,6 +36,7 @@ function setupSearch() {
   const resultsDropdown = document.getElementById("searchResults");
   const navSearchContainer = document.getElementById("navSearchContainer");
 
+  // Toggle search box display on search icon click
   document.addEventListener("click", (event) => {
     const searchButton = event.target.closest("#searchButton");
     if (searchButton && box) {
@@ -60,11 +59,10 @@ function setupSearch() {
 
   if (!box) return;
 
-  // Handle typing in search box
+  // Handle typing inside the search box
   box.addEventListener("input", () => {
     const query = box.value.trim().toLowerCase();
 
-    // If query is cleared, hide dropdown and restore calendar months
     if (!query) {
       if (resultsDropdown) resultsDropdown.style.display = "none";
       document.querySelectorAll(".month").forEach((month) => {
@@ -76,7 +74,7 @@ function setupSearch() {
     fetchLiveResults(query);
   });
 
-  // Handle Enter keypress
+  // Handle Enter keypress to navigate to matched page
   box.addEventListener("keypress", (event) => {
     if (event.key !== "Enter") return;
 
@@ -154,10 +152,6 @@ function runGlobalSearch(query) {
         window.location.href = targetUrl;
       } else {
         alert("Sorry! Couldn't find anything for '" + query + "'");
-        const months = document.querySelectorAll(".month");
-        months.forEach((month) => {
-          month.style.display = "block";
-        });
       }
     })
     .catch((error) => {
@@ -186,7 +180,6 @@ function initCalendar() {
   const container = document.getElementById("months-container");
   if (!container) return;
 
-  // Sort months chronologically by data-month attribute
   const months = Array.from(container.querySelectorAll(".month"));
   months.sort((a, b) =>
     (a.getAttribute("data-month") || "").localeCompare(
@@ -194,12 +187,10 @@ function initCalendar() {
     )
   );
 
-  // Re-append sorted months
   months.forEach((month) => {
     container.appendChild(month);
   });
 
-  // Handle accordion toggle clicks
   container.addEventListener("click", (event) => {
     const toggle = event.target.closest(".month-toggle");
     if (!toggle) return;
@@ -208,10 +199,5 @@ function initCalendar() {
     const table = monthDiv ? monthDiv.querySelector(".month-table") : null;
 
     if (table) {
-      // Toggle inline display property directly
       const isHidden = getComputedStyle(table).display === "none";
-      table.style.display = isHidden ? "table" : "none";
-      toggle.classList.toggle("is-open", isHidden);
-    }
-  });
-}
+      table.style.display
