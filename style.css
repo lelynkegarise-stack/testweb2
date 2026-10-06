@@ -26,7 +26,7 @@ body {
   background: var(--bg-page);
   color: var(--text);
   line-height: 1.6;
-  padding-top: 70px; /* Space so fixed navbar doesn't cover top page content */
+  padding-top: 70px
 }
 
 a {
@@ -43,19 +43,18 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem;
+  overflow-x: hidden;
 }
 
-/* ========================== Distinct Navbar ========================== */
 /* ========================== Distinct Navbar ========================== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 70px;
   background: var(--brand-blue-dark);
   color: var(--white);
-  z-index: 9999;
+  z-index: 999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,10 +65,8 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.85rem 1.5rem;
-  position: relative;
 }
 
-/* Reset default lists */
 nav ul, 
 nav li, 
 ul.menu, 
@@ -85,16 +82,19 @@ ul.dropdown-content li {
 /* Centered Logo */
 .logo {
   display: flex;
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .logo img {
   height: 52px;
   width: auto;
   display: block;
+  margin: 0 auto;
 }
 
-/* Navigation Menu (Desktop Default) */
+/* Navigation Menu */
 .menu {
   display: flex;
   align-items: center;
@@ -151,11 +151,8 @@ ul.dropdown-content li {
   color: var(--brand-blue);
 }
 
-/* Hamburger & Toggle Buttons (Updated Selectors) */
-.hamburger, 
-#hamburger, 
-.nav-toggle, 
-.menu-toggle {
+/* Remove weird dash/button outline */
+.hamburger, #hamburger, .menu-toggle {
   background: transparent !important;
   border: none !important;
   outline: none !important;
@@ -165,7 +162,10 @@ ul.dropdown-content li {
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   line-height: 1;
-  display: none; /* Hidden on desktop */
+}
+
+.hamburger::before, .hamburger::after {
+  content: none !important;
 }
 
 /* ========================== Fixed Search Bar ========================== */
@@ -243,39 +243,11 @@ ul.dropdown-content li {
   color: var(--brand-blue);
 }
 
-/* ========================== Mobile Responsive Rules ========================== */
-@media (max-width: 768px) {
-  .hamburger, 
-  #hamburger, 
-  .nav-toggle {
-    display: block; /* Show menu toggle on mobile screens */
-  }
-
-  .menu {
-    display: none; /* Hide desktop menu by default on mobile */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--brand-blue-dark);
-    padding: 1rem 1.5rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    gap: 1rem;
-  }
-
-  /* Triggered when JS toggles the class */
-  .menu.show,
-  .menu.active {
-    display: flex !important;
-  }
-}
-
-/* ========================== Hero Intro ========================== */
+/* ========================== Hero Intro (Unboxed) ========================== */
 .intro {
   text-align: center;
   padding: 4rem 1.5rem 3rem;
-  background: #ffffff;
+  background: linear-gradient(180deg, #f0f6ff 0%, var(--bg-page) 100%);
 }
 
 .intro-content {
@@ -342,7 +314,7 @@ ul.dropdown-content li {
   border-color: var(--brand-blue);
 }
 
-/* ========================== Highlight Cards ========================== */
+/* ========================== Flowing Highlight Cards ========================== */
 .highlights {
   margin: 4rem 0;
 }
@@ -378,7 +350,7 @@ ul.dropdown-content li {
   font-size: 0.975rem;
 }
 
-/* ========================== Events Calendar ========================== */
+/* ========================== Centered Events Calendar ========================== */
 #months-container {
   max-width: 900px;
   margin: 0 auto;
@@ -412,6 +384,7 @@ ul.dropdown-content li {
   background: var(--brand-blue-dark);
 }
 
+/* Styled Event Tables */
 .month-table {
   display: none;
   width: 100%;
@@ -452,7 +425,7 @@ ul.dropdown-content li {
   background-color: var(--bg-soft);
 }
 
-/* ========================== Footer ========================== */
+/* ========================== Distinct & Centered Footer ========================== */
 footer, .site-footer {
   background: #1e293b;
   color: #f1f5f9;
