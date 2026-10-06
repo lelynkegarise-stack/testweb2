@@ -54,20 +54,11 @@ function setupSearch() {
 
   if (!box) return;
 
-  box.addEventListener("input", () => {
-    const query = box.value.trim().toLowerCase();
-    if (!query) {
-      if (resultsDropdown) resultsDropdown.style.display = "none";
-      return;
-    }
-    fetchLiveResults(query);
-  });
-
-// Handle typing in search box
+  // Handle typing in search box
   box.addEventListener("input", () => {
     const query = box.value.trim().toLowerCase();
 
-    // If query is cleared, hide dropdown and unhide calendar months
+    // If query is cleared, hide dropdown and restore calendar months
     if (!query) {
       if (resultsDropdown) resultsDropdown.style.display = "none";
       document.querySelectorAll(".month").forEach((month) => {
@@ -86,17 +77,6 @@ function setupSearch() {
     event.preventDefault();
     const query = box.value.trim().toLowerCase();
     if (!query) return;
-
-    runGlobalSearch(query);
-  });
-
-      if (!foundMatch) {
-        runGlobalSearch(query);
-      } else if (resultsDropdown) {
-        resultsDropdown.style.display = "none";
-      }
-      return;
-    }
 
     runGlobalSearch(query);
   });
@@ -180,9 +160,7 @@ function runGlobalSearch(query) {
     });
 }
 
-// Fixed getSearchData to always fetch root /search.json cleanly
 function getSearchData() {
-  // Uses relative path so it works both locally and on GitHub Pages subpaths
   const searchUrl = window.location.pathname.includes('/testweb2') 
     ? '/testweb2/search.json' 
     : './search.json';
@@ -227,18 +205,5 @@ function initCalendar() {
       table.classList.toggle("show");
       toggle.classList.toggle("is-open");
     }
-  });
-}
-
-  container.addEventListener("click", (event) => {
-    const toggle = event.target.closest(".month-toggle");
-    if (!toggle) return;
-
-    const table = toggle.nextElementSibling;
-    if (!table) return;
-
-    const opened = table.classList.contains("show");
-    table.classList.toggle("show", !opened);
-    toggle.classList.toggle("is-open", !opened);
   });
 }
