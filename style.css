@@ -46,7 +46,7 @@ main {
 }
 
 /* ========================== Distinct Navbar ========================== */
-header, nav {
+header{
   position: fixed;
   top: 0;
   left: 0;
@@ -81,16 +81,13 @@ ul.dropdown-content li {
 /* Centered Logo */
 .logo {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto;
 }
 
 .logo img {
   height: 52px;
   width: auto;
   display: block;
-  margin: 0 auto;
 }
 
 /* Navigation Menu */
