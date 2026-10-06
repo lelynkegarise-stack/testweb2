@@ -247,7 +247,7 @@ ul.dropdown-content li {
 .intro {
   text-align: center;
   padding: 4rem 1.5rem 3rem;
-  background: linear-gradient(180deg, #f0f6ff 0%, var(--bg-page) 100%);
+  background: #ffffff;
 }
 
 .intro-content {
