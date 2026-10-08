@@ -53,7 +53,7 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.25rem 1.5rem;
-  background:  rgba(0, 0, 255, 0.96);
+  background:  rgba(0, 0, 255, 0.90);
   color: white;
   backdrop-filter: blur(6px);
   position: sticky;
@@ -71,6 +71,7 @@ ul.dropdown-content li {
   list-style-type: none !important;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 .logo img {
@@ -125,7 +126,20 @@ ul.dropdown-content li {
   padding: 0.6rem 1.2rem;
   display: block;
 }
-
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  background:  rgba(0, 0, 255, 0.90);
+  color: white;
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 /* ========================== Hero Intro (Unboxed) ========================== */
 .intro {
   text-align: center;
