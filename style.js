@@ -176,30 +176,24 @@ function getSearchData() {
     });
 }
 
-function initCalendar() {
-  const container = document.getElementById("months-container");
-  if (!container) return;
+function initEvents() {
+    const container = document.getElementById("months-container");
+    if (!container) return;
 
-  const months = Array.from(container.querySelectorAll(".month"));
-  months.sort((a, b) =>
-    (a.getAttribute("data-month") || "").localeCompare(
-      b.getAttribute("data-month") || ""
-    )
-  );
+    const months = Array.from(container.querySelectorAll(".month"));
+    months.sort((a, b) => {
+        const aDate = a.getAttribute('data-month') || "";
+        const bDate = b.getAttribute('data-month') || "";
+        return aDate.localeCompare(bDate);
+    });
+    months.forEach(month => container.appendChild(month));
 
-  months.forEach((month) => {
-    container.appendChild(month);
-  });
+    container.onclick = function(e) {
+        if (e.target.classList.contains("month-toggle")) {
+            const table = e.target.nextElementSibling;
+            if (table) table.classList.toggle("show");
+        }
+    };
+}
 
-  container.addEventListener("click", (event) => {
-    const toggle = event.target.closest(".month-toggle");
-    if (!toggle) return;
-
-    const monthDiv = toggle.closest(".month");
-    const table = monthDiv ? monthDiv.querySelector(".month-table") : null;
-
-    if (table) {
-      const isHidden = getComputedStyle(table).display === "none";
-      table.style.display
-    }
-  });
+window.addEventListener("load", initEvents);
