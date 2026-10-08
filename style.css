@@ -1,20 +1,39 @@
-/* ========================== Theme & Base ========================== */
+/* ==========================================================================
+   RURITAN CLUB - GLOBAL THEME & BASE STYLES
+   ========================================================================== */
 :root {
-  --brand-blue: #0a4ea3;
-  --brand-blue-dark: #0b2e5b;
-  --brand-gold: #f9d858;
-  --brand-gold-deep: #d9a81c;
-  --bg-soft: #f4f8ff;
-  --bg-page: #fafbfc;
+  /* Official Ruritan Palette */
+  --brand-blue: #003366;          /* Deep Ruritan Navy Blue */
+  --brand-blue-dark: #002244;     /* Darker accent blue */
+  --brand-blue-light: #1a4d80;    /* Hover / header blue */
+  --brand-gold: #f3a812;          /* Warm Ruritan Gold/Yellow */
+  --brand-gold-deep: #d98e04;     /* Button hover gold */
+  
+  /* Modern UI Variables */
+  --primary: var(--brand-blue);
+  --primary-dark: var(--brand-blue-dark);
+  --primary-light: var(--brand-blue-light);
+  --accent: var(--brand-gold);
+  
+  /* Backgrounds & Surfaces */
+  --bg-page: #f8fafc;
+  --bg-soft: #f0f4f8;
   --white: #ffffff;
+  
+  /* Typography & Borders */
   --text: #1e293b;
   --muted: #64748b;
+  --border: #e2e8f0;
   --border-light: rgba(226, 232, 240, 0.8);
-  --border: #dfe8f5;
-  --radius: 16px;
+  
+  /* Shadows & Layout */
+  --radius: 12px;
+  --shadow: 0 4px 15px rgba(0, 51, 102, 0.08);
+  --shadow-hover: 0 10px 25px rgba(0, 51, 102, 0.15);
   --max-width: 1100px;
 }
 
+/* Base Reset */
 * {
   box-sizing: border-box;
 }
@@ -45,7 +64,9 @@ main {
   padding: 3rem 1.5rem;
 }
 
-/* ========================== Seamless Header & Navbar ========================== */
+/* ==========================================================================
+   NAVIGATION BAR
+   ========================================================================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -53,12 +74,12 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.25rem 1.5rem;
-  background:  rgba(0, 0, 255, 0.90);
-  color: white;
-  backdrop-filter: blur(6px);
+  background: var(--brand-blue);
+  color: var(--white);
   position: sticky;
   top: 0;
   z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 nav ul, 
@@ -68,10 +89,8 @@ ul.menu li,
 ul.dropdown-content, 
 ul.dropdown-content li {
   list-style: none !important;
-  list-style-type: none !important;
   margin: 0;
   padding: 0;
-  color: white;
 }
 
 .logo img {
@@ -91,16 +110,17 @@ ul.dropdown-content li {
 
 .menu li a {
   text-decoration: none;
-  color: var(--brand-blue-dark);
+  color: var(--white);
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
 .menu li a:hover {
-  color: var(--brand-blue);
+  color: var(--brand-gold);
 }
 
+/* Dropdown Menu */
 .dropdown {
   position: relative;
 }
@@ -110,8 +130,8 @@ ul.dropdown-content li {
   top: 100%;
   left: 0;
   background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: var(--shadow-hover);
   padding: 0.5rem 0;
   display: none;
   min-width: 180px;
@@ -123,28 +143,24 @@ ul.dropdown-content li {
 }
 
 .dropdown-content li a {
+  color: var(--text);
   padding: 0.6rem 1.2rem;
   display: block;
 }
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1.25rem 1.5rem;
-  background:  rgba(0, 0, 255, 0.90);
-  color: white;
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+
+.dropdown-content li a:hover {
+  background: var(--bg-soft);
+  color: var(--brand-blue);
 }
-/* ========================== Hero Intro (Unboxed) ========================== */
+
+/* ==========================================================================
+   HERO / INTRO SECTION
+   ========================================================================== */
 .intro {
   text-align: center;
   padding: 4rem 1.5rem 3rem;
-  background: linear-gradient(180deg, #f0f6ff 0%, var(--bg-page) 100%);
+  background: linear-gradient(180deg, #e6f0fa 0%, var(--bg-page) 100%);
+  border-bottom: 1px solid var(--border);
 }
 
 .intro-content {
@@ -156,7 +172,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--brand-blue);
   margin-bottom: 0.75rem;
 }
@@ -174,7 +190,9 @@ footer {
   line-height: 1.7;
 }
 
-/* ========================== Buttons ========================== */
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 .btn-row {
   display: flex;
   justify-content: center;
@@ -182,36 +200,48 @@ footer {
   margin-top: 2rem;
 }
 
-.button, button.button, form button, input[type="submit"] {
+.button, 
+button.button, 
+form button, 
+input[type="submit"] {
   display: inline-block;
-  padding: 0.8rem 1.75rem;
+  padding: 0.85rem 1.85rem;
   border-radius: 99px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-decoration: none;
   background: var(--brand-gold);
-  color: #1a202c;
+  color: var(--brand-blue-dark);
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(243, 168, 18, 0.3);
 }
 
-.button:hover, button.button:hover, form button:hover, input[type="submit"]:hover {
+.button:hover, 
+button.button:hover, 
+form button:hover, 
+input[type="submit"]:hover {
   background: var(--brand-gold-deep);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 142, 4, 0.4);
 }
 
 .button.secondary {
   background: transparent;
   color: var(--brand-blue-dark);
-  border: 1.5px solid var(--border-light);
+  border: 2px solid var(--brand-blue);
+  box-shadow: none;
 }
 
 .button.secondary:hover {
-  background: var(--white);
-  border-color: var(--brand-blue);
+  background: var(--brand-blue);
+  color: var(--white);
 }
 
-/* ========================== Flowing Highlight Cards ========================== */
+/* ==========================================================================
+   HIGHLIGHT CARDS
+   ========================================================================== */
 .highlights {
   margin: 4rem 0;
 }
@@ -226,18 +256,20 @@ footer {
   background: var(--white);
   padding: 2rem;
   border-radius: var(--radius);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .highlight-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(10, 78, 163, 0.08);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand-blue-light);
 }
 
 .highlight-card h2 {
   color: var(--brand-blue-dark);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-top: 0;
 }
 
@@ -247,83 +279,115 @@ footer {
   font-size: 0.975rem;
 }
 
-/* ========================== Centered Events Calendar ========================== */
-
+/* ==========================================================================
+   EVENTS CALENDAR ACCORDION
+   ========================================================================== */
 #months-container {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
 }
 
 .month {
-    width: 100%;
-    margin-bottom: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
 }
 
 .month-toggle {
-    width: 100%;
-    padding: 1.25rem;
-    background: var(--primary, #1e40af);
-    color: var(--white, #ffffff);
-    border: none;
-    cursor: pointer;
-    font-size: 1.15rem;
-    font-weight: 600;
-    border-radius: var(--radius, 6px);
-    transition: all 0.3s ease;
-    text-align: left;
+  width: 100%;
+  padding: 1.15rem 1.5rem;
+  background: var(--brand-blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  transition: all 0.25s ease;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
 }
 
 .month-toggle:hover {
-    background: var(--primary-dark, #1e3a8a);
-    transform: translateX(4px);
+  background: var(--brand-blue-light);
+  transform: translateY(-1px);
 }
 
 .month-table {
-    display: none; 
-    width: 100%;
-    margin-top: 0.75rem;
-    border-collapse: collapse;
-    background: var(--white, #ffffff);
-    box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
-    border-radius: var(--radius, 6px);
-    overflow: hidden;
+  display: none; /* Controlled via JS toggle (.show) */
+  width: 100%;
+  margin-top: 0.5rem;
+  border-collapse: collapse;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
 
 .month-table.show {
-    display: table !important;
+  display: table !important;
 }
 
 .month-table th {
-    background: var(--primary-light, #3b82f6);
-    color: var(--white, #ffffff);
-    font-weight: 700;
-    padding: 1rem;
-    text-align: left;
-    font-size: 0.95rem;
+  background: var(--brand-blue-light);
+  color: var(--white);
+  font-weight: 700;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
 }
 
 .month-table td {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border, #e5e7eb);
-    color: var(--text, #1f2937);
-    text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-align: left;
 }
 
 .month-table td a {
-    color: var(--primary, #1e40af);
-    text-decoration: none;
-    font-weight: 600;
+  color: var(--brand-blue);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .month-table td a:hover {
-    text-decoration: underline;
+  color: var(--brand-gold-deep);
+  text-decoration: underline;
 }
 
 .month-table tbody tr:hover {
-    background: var(--bg-soft, #f9fafb);
+  background: var(--bg-soft);
 }
 
 .month-table tbody tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 3rem auto 0;
+  padding: 1.5rem;
+  background: var(--brand-blue-dark);
+  color: var(--white);
+  border-top: 3px solid var(--brand-gold);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+footer a {
+  color: var(--brand-gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
