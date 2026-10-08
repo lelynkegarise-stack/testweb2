@@ -236,70 +236,80 @@ ul.dropdown-content li {
 /* ========================== Centered Events Calendar ========================== */
 
 #months-container {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .month {
-  width: 100%;
-  margin-bottom: 1.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .month-toggle {
-  width: 100%;
-  padding: 1.25rem;
-  background: var(--primary);
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  font-size: 1.15rem;
-  font-weight: 600;
-  border-radius: var(--radius);
-  transition: all 0.3s ease;
+    width: 100%;
+    padding: 1.25rem;
+    background: var(--primary, #1e40af);
+    color: var(--white, #ffffff);
+    border: none;
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: var(--radius, 6px);
+    transition: all 0.3s ease;
+    text-align: left;
 }
 
 .month-toggle:hover {
-  background: var(--primary-dark);
-  transform: translateX(4px);
+    background: var(--primary-dark, #1e3a8a);
+    transform: translateX(4px);
 }
 
 .month-table {
-  display: table;
-  width: 100%;
-  margin-top: 0.75rem;
-  border-collapse: collapse;
-  background: var(--white);
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
-  overflow: hidden;
+    display: none; 
+    width: 100%;
+    margin-top: 0.75rem;
+    border-collapse: collapse;
+    background: var(--white, #ffffff);
+    box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+    border-radius: var(--radius, 6px);
+    overflow: hidden;
 }
 
 .month-table.show {
-  display: table !important;
+    display: table !important;
 }
 
 .month-table th {
-  background: var(--primary-light);
-  color: var(--white);
-  font-weight: 700;
-  padding: 1rem;
-  text-align: left;
-  font-size: 0.95rem;
+    background: var(--primary-light, #3b82f6);
+    color: var(--white, #ffffff);
+    font-weight: 700;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.95rem;
 }
 
 .month-table td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--border);
-  color: var(--text);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border, #e5e7eb);
+    color: var(--text, #1f2937);
+    text-align: left;
+}
+
+.month-table td a {
+    color: var(--primary, #1e40af);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.month-table td a:hover {
+    text-decoration: underline;
 }
 
 .month-table tbody tr:hover {
-  background: var(--bg-soft);
+    background: var(--bg-soft, #f9fafb);
 }
 
 .month-table tbody tr:last-child td {
-  border-bottom: none;
+    border-bottom: none;
 }
-
-
