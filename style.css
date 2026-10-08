@@ -282,6 +282,7 @@ input[type="submit"]:hover {
 /* ==========================================================================
    EVENTS CALENDAR ACCORDION
    ========================================================================== */
+  
 .month {
     margin-bottom: 20px;
 }
@@ -290,7 +291,7 @@ input[type="submit"]:hover {
 .month-toggle {
     width: 100%;
     padding: 12px;
-    background-color: blue;
+    background-color: #003366;
     color: white;
     border: none;
     cursor: pointer;
@@ -301,7 +302,7 @@ input[type="submit"]:hover {
 }
 
 .month-toggle:hover {
-    background-color: darkblue;
+    background-color: #002244;
 }
 
 .month-table {
@@ -327,7 +328,7 @@ input[type="submit"]:hover {
 }
 
 .month-table td a {
-    color: blue;
+    color: #003366;
     text-decoration: none;
 }
 
