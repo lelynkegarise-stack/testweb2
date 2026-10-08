@@ -1,18 +1,42 @@
 [
-  {"title": "Home", "url": "index.html", 
-  "content": "Welcome Downsville Ruritan Club Maryland community service volunteer Fellowship Goodwill non-profit 1954 8629 Downsville Pike Williamsport 21795 location map address."},
-  {"title": "About us", "url": "index.html",
-    "content": "About Downsville Ruritan"},
-    {"title": " History", "url": "history.html",
-    "content": "history"},
-    {"title": "mission", "url": "mission.html",
-    "content": "officers mission"},
-    {"title": "join", "url": "join.html",
-    "content": "join "},
-  {"title": "rentals", "url": "rentals.html",
-    "content": "Rent building  "},
-  {"title": "calendar", "url": "calendar.html",
-    "content": "See our upcoming events bingo lowball community day easter basket bingo quarter auction floyd carnival tea christmas santa gingerbread"},
-  {"title": "Contact", "url": "contact.html",
-    "content": "contact questions email phone brad chasity ."}
+  {
+    "title": "Home",
+    "url": "index.html",
+    "content": "Downsville Ruritan Club serving Downsville Maryland community service fellowship goodwill volunteer since 1954 location address map"
+  },
+  {
+    "title": "About Us",
+    "url": "index.html",
+    "content": "About Downsville Ruritan Club community fellowship and goodwill"
+  },
+  {
+    "title": "History",
+    "url": "history.html",
+    "content": "history Downsville Ruritan Club community mission service since 1954"
+  },
+  {
+    "title": "Mission",
+    "url": "mission.html",
+    "content": "mission officers Downsville Ruritan Club volunteer service community"
+  },
+  {
+    "title": "Join",
+    "url": "join.html",
+    "content": "join Downsville Ruritan Club membership volunteers community service"
+  },
+  {
+    "title": "Rentals",
+    "url": "rentals.html",
+    "content": "rentals building Downsville Ruritan Club hall events"
+  },
+  {
+    "title": "Calendar",
+    "url": "calendar.html",
+    "content": "calendar upcoming events bingo lowball community day easter basket quarter auction floyd carnival tea santa gingerbread sausage car show"
+  },
+  {
+    "title": "Contact",
+    "url": "contact.html",
+    "content": "contact Downsville Ruritan Club questions email phone brad chasity"
+  }
 ]

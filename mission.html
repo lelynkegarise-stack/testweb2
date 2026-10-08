@@ -1,55 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-       <title>Ruritan Mission</title> 
-       
-    </head>
-    <body>
-        <div id="navbar"></div>
-<script>
+---
+layout: default
+title: "Downsville Ruritan Club Mission | Community Service in Maryland"
+description: "Learn about the Downsville Ruritan Club mission of fellowship, goodwill, and service in Downsville, Williamsport, and surrounding Maryland communities."
+keywords: "Downsville Ruritan mission, community service Maryland, fellowship and goodwill, local volunteer club, Williamsport community organization"
+---
 
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
+<main class="page-shell">
+  <header class="page-header alt">
+    <div class="page-header-inner">
+      <p class="eyebrow">Our Purpose</p>
+      <h1>Mission of the Downsville Ruritan Club</h1>
+      <p>For more than 70 years, the Downsville Ruritan Club has worked to strengthen the community through service, fellowship, and goodwill.</p>
+    </div>
+  </header>
 
-</script>
-        <h1>
-            Ruritan Mission
-        </h1>
-        <p>
-        Downsville Ruritan is dedicated to improving local communites and build a better America through Fellowship, Goodwill, and Community service. 
-        Each Ruritan club surveys the needs of its comminuty and works to meet those needs.
-        Downsville Ruritan works with the local boy scout troop 58, Conocochegue little leauge, and football providing facilities for them to meet and practice.
-        We host a wide range of events to provide for christmas for kids, Easter egg hunt, hygine baskets, and other community events. 
-        </p>
-        
-        <h2>
-        <img src ="officer.png" alt="officers" width="100%"><br>
-          Current Officers:<br>  
-        </h2>
-        <ul>
-            <li> President: Brad Kegarise</li>
-            <li> Vice President: Chasity Long</li>
-            <li> Secretary: Amy Kegarise</li>
-            <li> Treasurer: Terri Gross</li>
-            <li> 1 year board member: Dakota Overcash</li>
-            <li> 2 year board member: Lance Shank</li>
-            <li> 3 year board member: Dean Baker</li>
-            <li> Past President: Pat Shank </li>
-        </ul>
-                <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-        <script src="style.js"></script>
-    </body>
-</html>
+  <section class="content-section">
+    <div class="content-panel">
+      <div class="split-layout">
+        <div>
+          <h2>Serving with Purpose</h2>
+          <p>The Downsville Ruritan Club is dedicated to improving local communities and building a better America through fellowship, goodwill, and community service. Since 1954, we have been serving Downsville, Williamsport, and neighboring communities with practical, hands-on support.</p>
+          <p>Each Ruritan club surveys the needs of its community and works to meet those needs through volunteer efforts, local partnerships, and shared responsibility. Our members believe that stronger neighborhoods begin with caring neighbors.</p>
+        </div>
+        <div class="img-card">
+          <img src="{{ '/images/officer.png' | relative_url }}" alt="Downsville Ruritan Club officers and volunteers">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-panel">
+      <h2>What We Do in Downsville</h2>
+      <div class="info-grid three-up">
+        <article class="info-card">
+          <h3>Support Youth</h3>
+          <p>We provide support for youth programs, local activities, and community organizations working to help young people thrive.</p>
+        </article>
+        <article class="info-card">
+          <h3>Host Events</h3>
+          <p>From holiday programs to community gatherings, we create opportunities for neighbors to connect and celebrate together.</p>
+        </article>
+        <article class="info-card">
+          <h3>Serve Neighbors</h3>
+          <p>We offer practical help through local food drives, hygiene baskets, volunteer work, and community support initiatives.</p>
+        </article>
+      </div>
+
+      <ul class="feature-list">
+        <li>Supporting local Boy Scout Troop 58 with meeting and practice facilities</li>
+        <li>Providing resources for Conococheague Little League baseball</li>
+        <li>Supporting local youth football programs</li>
+        <li>Hosting community events including Christmas for Kids programs</li>
+        <li>Organizing Easter egg hunts and family activities</li>
+        <li>Providing hygiene baskets and assistance to those in need</li>
+        <li>Sponsoring the Williamsport Carnival and other community events</li>
+        <li>Offering affordable community space rentals for local families and organizations</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-panel">
+      <h2>Our Commitment</h2>
+      <p>Our slogan is “Fellowship, Goodwill, and Community Service.” We believe in bringing people of all occupations, social positions, and backgrounds together to improve our community. People of all ages, backgrounds, and interests are welcome to join in the effort.</p>
+      <p>We are committed to making our area a better place to live, work, and raise a family—one act of service at a time.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-panel">
+      <h2>Current Officers</h2>
+      <div class="info-grid officers-grid">
+        <article class="info-card officer-card"><strong>President:</strong><span>Brad Kegarise</span></article>
+        <article class="info-card officer-card"><strong>Vice President:</strong><span>Chasity Long</span></article>
+        <article class="info-card officer-card"><strong>Secretary:</strong><span>Amy Kegarise</span></article>
+        <article class="info-card officer-card"><strong>Treasurer:</strong><span>Terri Gross</span></article>
+        <article class="info-card officer-card"><strong>1 Year Board Member:</strong><span>Dakota Overcash</span></article>
+        <article class="info-card officer-card"><strong>2 Year Board Member:</strong><span>Lance Shank</span></article>
+        <article class="info-card officer-card"><strong>3 Year Board Member:</strong><span>Dean Baker</span></article>
+        <article class="info-card officer-card"><strong>Past President:</strong><span>Pat Shank</span></article>
+      </div>
+    </div>
+  </section>
+</main>

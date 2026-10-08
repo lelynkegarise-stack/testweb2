@@ -1,254 +1,297 @@
-/* ==========================
-   1. CORE RESET & BOX MODEL FIX
-   ========================== */
-*, *::before, *::after {
-    box-sizing: border-box;
+/* ==========================================================================
+   RURITAN CLUB - GLOBAL THEME & BASE STYLES
+   ========================================================================== */
+:root {
+  /* Official Ruritan Palette */
+  --brand-blue: #003366;          /* Deep Ruritan Navy Blue */
+  --brand-blue-dark: #002244;     /* Darker accent blue */
+  --brand-blue-light: #1a4d80;    /* Hover / header blue */
+  --brand-gold: #f3a812;          /* Warm Ruritan Gold/Yellow */
+  --brand-gold-deep: #d98e04;     /* Button hover gold */
+  
+  /* Modern UI Variables */
+  --primary: var(--brand-blue);
+  --primary-dark: var(--brand-blue-dark);
+  --primary-light: var(--brand-blue-light);
+  --accent: var(--brand-gold);
+  
+  /* Backgrounds & Surfaces */
+  --bg-page: #f8fafc;
+  --bg-soft: #f0f4f8;
+  --white: #ffffff;
+  
+  /* Typography & Borders */
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --border-light: rgba(226, 232, 240, 0.8);
+  
+  /* Shadows & Layout */
+  --radius: 12px;
+  --shadow: 0 4px 15px rgba(0, 51, 102, 0.08);
+  --shadow-hover: 0 10px 25px rgba(0, 51, 102, 0.15);
+  --max-width: 1100px;
 }
 
-html {
-    -webkit-text-size-adjust: none !important;
-    text-size-adjust: none !important;
+/* Base Reset */
+* {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ==========================
-   2. NAVIGATION BAR
-   ========================== */
+a {
+  color: var(--brand-blue);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
+   ========================================================================== */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    position: relative;
-    z-index: 1000;
-    height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  background: var(--brand-blue);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav ul, 
+nav li, 
+ul.menu, 
+ul.menu li, 
+ul.dropdown-content, 
+ul.dropdown-content li {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
 }
 
 .logo img {
-    height: 50px !important;
-    width: auto !important;
-    display: block;
+  height: 48px;
+  width: auto;
 }
 
 .menu {
-    list-style: none !important;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu li {
+  position: relative;
 }
 
 .menu li a {
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
+.menu li a:hover {
+  color: var(--brand-gold);
+}
+
+/* Dropdown Menu */
 .dropdown {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-    list-style: none !important;
-    padding: 10px 0;
-    margin: 0;
-    z-index: 2000;
-    border-radius: 8px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-hover);
+  padding: 0.5rem 0;
+  display: none;
+  min-width: 180px;
+  z-index: 10;
 }
 
-.dropdown-content li a { 
-    padding: 12px 20px; 
-    color: #333; 
-    display: block;
-    font-weight: normal;
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li a {
+  color: var(--text);
+  padding: 0.6rem 1.2rem;
+  display: block;
 }
 
 .dropdown-content li a:hover {
-    background-color: #f1f1f1;
+  background: var(--bg-soft);
+  color: var(--brand-blue);
 }
 
-/* Enable dropdown hover on desktop screens */
-@media screen and (min-width: 951px) {
-    .dropdown:hover .dropdown-content { 
-        display: block; 
-    }
-}
-
-/* Container for search elements */
-#navSearchContainer {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    position: relative;
-}
-
-/* Search Button (Icon) */
-#searchButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: blue;
-    padding: 5px;
-}
-
-/* Search Input Box */
-#searchBox {
-    padding: 5px 10px;
-    border: 1px solid blue;
-    border-radius: 20px;
-    outline: none;
-    width: 15vw; 
-    min-width: 80px;
-    max-width: 180px;
-    font-size: 14px;
-    background-color: white;
-    color: #333;
-}
-
-/* ==========================
-   3. INTRO SECTION
-   ========================== */
+/* ==========================================================================
+   HERO / INTRO SECTION
+   ========================================================================== */
 .intro {
-    background-color: blue;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    padding: 40px 20px;
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  background: linear-gradient(180deg, #e6f0fa 0%, var(--bg-page) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.intro-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--brand-blue);
+  margin-bottom: 0.75rem;
 }
 
 .intro h1 {
-    margin: 0 0 20px 0;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--brand-blue-dark);
+  margin: 0 0 1rem;
+  line-height: 1.15;
 }
 
 .intro p {
-    max-width: 800px;
-    margin-top: 20px;
-    line-height: 1.6;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-.logo1 {
-    width: 150px !important;
-    height: auto !important;
-    margin: 20px 0;
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-/* ==========================
-   4. LOCATION SECTION (Text + Map)
-   ========================== */
-.location-container {
-    padding: 60px 10%;
-    background-color: #f9f9f9;
+.button, 
+button.button, 
+form button, 
+input[type="submit"] {
+  display: inline-block;
+  padding: 0.85rem 1.85rem;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  background: var(--brand-gold);
+  color: var(--brand-blue-dark);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(243, 168, 18, 0.3);
 }
 
-.location-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+.button:hover, 
+button.button:hover, 
+form button:hover, 
+input[type="submit"]:hover {
+  background: var(--brand-gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 142, 4, 0.4);
 }
 
-.location-text {
-    flex: 1;
-    text-align: left;
-    color: blue;
-    font-size: 32px;
-    margin-bottom: 20px;
+.button.secondary {
+  background: transparent;
+  color: var(--brand-blue-dark);
+  border: 2px solid var(--brand-blue);
+  box-shadow: none;
 }
 
-.location-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
+.button.secondary:hover {
+  background: var(--brand-blue);
+  color: var(--white);
 }
 
-.location-map {
-    flex: 1;
-    min-width: 300px;
+/* ==========================================================================
+   HIGHLIGHT CARDS
+   ========================================================================== */
+.highlights {
+  margin: 4rem 0;
 }
 
-/* ==========================
-   5. FOOTER
-   ========================== */
-#footer, footer {
-    width: 100% !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: #333;
-    clear: both;
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.footer-content {
-    max-width: 100%;
-    margin: 0;
-    padding: 20px 5%;
-    color: white;
-    text-align: center;
+.highlight-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ==========================
-   6. FORMS
-   ========================== */
-form {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 0 15px;
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand-blue-light);
 }
 
-label {
-    display: block;
-    margin-top: 12px;
-    font-weight: bold;
+.highlight-card h2 {
+  color: var(--brand-blue-dark);
+  font-size: 1.3rem;
+  margin-top: 0;
 }
 
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
+.highlight-card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.975rem;
 }
 
-form button {
-    margin-top: 16px;
-    padding: 10px 20px;
-    background: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-/* ==========================
-   7. CALENDAR / MONTH TOGGLE
-   ========================== */
+/* ==========================================================================
+   EVENTS CALENDAR ACCORDION
+   ========================================================================== */
+  
 .month {
     margin-bottom: 20px;
 }
 
+/* Month buttons */
 .month-toggle {
     width: 100%;
     padding: 12px;
-    background-color: blue;
+    background-color: #003366;
     color: white;
     border: none;
     cursor: pointer;
@@ -259,7 +302,7 @@ form button {
 }
 
 .month-toggle:hover {
-    background-color: darkblue;
+    background-color: #002244;
 }
 
 .month-table {
@@ -272,6 +315,7 @@ form button {
     display: table !important; 
 }
 
+/* Table styling */
 .month-table th,
 .month-table td {
     border: 1px solid #333;
@@ -284,7 +328,7 @@ form button {
 }
 
 .month-table td a {
-    color: blue;
+    color: #003366;
     text-decoration: none;
 }
 
@@ -311,157 +355,42 @@ form button {
     text-align: center;
 }
 
-p, h4, h1 {
+p {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+h1 {
     text-align: center;
 }
 
 .p2 {
    text-align: left !important;
 }
-
-/* ==========================
-   9. TIP JAR WINNERS / BUTTONS
-   ========================== */
-.tips {
-    margin-bottom: 20px;
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 3rem auto 0;
+  padding: 1.5rem;
+  background: var(--brand-blue-dark);
+  color: var(--white);
+  border-top: 3px solid var(--brand-gold);
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
-.tips-table {
-    display: table; 
-    width: 100%;
-    border-collapse: collapse;
+footer a {
+  color: var(--brand-gold);
+  text-decoration: none;
 }
 
-.tips-table th,
-.tips-table td {
-    border: 1px solid #333 !important;
-    padding: 10px !important;
-    text-align: left;
-}
-
-.tips-table th {
-    background-color: #ddd;
-}
-
-.tips-table td a {
-    color: blue;
-    text-decoration: none;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center; 
-    width: 100%;            
-    margin: 20px 0;
-    padding: 0 15px;
-}
-
-.button {
-    display: inline-block;
-    background-color: #FFFF00 !important; 
-    color: #000000 !important;           
-    font-weight: bold;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    max-width: 100%;
-    text-align: center;
-    transition: background-color 0.2s ease;
-}
-
-.button:hover {
-    background-color: #D4AF37;
-}
-
-/* ==========================
-   10. MOBILE & RESPONSIVE
-   ========================== */
-@media screen and (max-width: 950px) {
-    nav {
-        flex-direction: row;          
-        justify-content: space-between; 
-        align-items: center;
-        height: auto;
-        padding: 10px 20px;
-        font-size: 12px;
-        background: white;
-    }
-
-    .menu {
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;              
-        margin-top: 0;
-        background-color: white;
-        border-top: none;
-        padding-bottom: 0;
-    }
-
-    .menu li {
-        width: auto !important;
-        text-align: center;
-        padding: 0;
-        list-style: none !important;
-    }
-
-    .dropdown {
-        position: relative; 
-    }
-
-    .dropdown-content {
-        position: absolute !important;   
-        top: 100% !important;            
-        left: 50% !important;
-        transform: translateX(-50%);     
-        display: none !important;        
-        background-color: white !important;
-        min-width: 160px !important;
-        box-shadow: 0px 8px 16px rgba(0,0,0,0.15) !important;
-        border-radius: 8px !important;
-        z-index: 2500 !important;        
-    }
-
-    .dropdown.open .dropdown-content { 
-        display: block !important; 
-    }
-
-    .location-content {
-        flex-direction: column !important;
-        text-align: center;
-    }
-
-    .location-text { 
-        text-align: center; 
-        margin-bottom: 30px; 
-    }
-
-    .container {
-        flex-direction: column !important;
-        align-items: center;
-    }
-
-    .left, .right {
-        width: 100% !important;
-        margin-bottom: 20px;
-    }
-
-    .tips-table, .month-table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-@media screen and (orientation: landscape) and (max-height: 500px) {
-    .intro { 
-        padding: 20px; 
-        min-height: auto; 
-    }
-    .logo1 { 
-        width: 80px !important; 
-    }
+footer a:hover {
+  text-decoration: underline;
 }

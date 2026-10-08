@@ -3,26 +3,35 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
-  <link rel="stylesheet" href="{{ '/style.css?v=1.0' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/logo1.png' | relative_url }}">
-  <link rel="apple-touch-icon" href="{{ '/logo1.png' | relative_url }}">
-  
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | escape }}{% else %}{{ site.description | strip_html | strip_newlines | escape }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="{{ site.author | default: 'Downsville Ruritan Club' }}">
+  <meta name="theme-color" content="#0a4ea3">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | escape }}{% else %}{{ site.description | strip_html | strip_newlines | escape }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | escape }}{% else %}{{ site.description | strip_html | strip_newlines | escape }}{% endif %}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <link rel="stylesheet" href="{{ '/style.css?v=2.0' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/rlogo.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/images/rlogo.png' | relative_url }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>
 
 <body>
-
-  <!-- Navbar Include -->
   {% include navbar.html %}
 
-  <!-- Page Content -->
   {{ content }}
 
-  <!-- Footer Include -->
   {% include footer.html %}
 
-  <script src="{{ '/style.js' | relative_url }}"></script>
+  <script src="{{ '/style.js' | relative_url }}" defer></script>
 </body>
 </html>

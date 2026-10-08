@@ -1,7 +1,13 @@
 fetch("./navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
+  .then((response) => {
+    if (!response.ok) throw new Error("Failed to load navbar.html");
+    return response.text();
+  })
+  .then((data) => {
+    const navContainer = document.getElementById("navbar");
+    if (navContainer) {
+      navContainer.innerHTML = data;
+    }
 
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
@@ -16,56 +22,66 @@ fetch("./navbar.html")
     }
 
     // 2. Mobile Dropdown (About Us)
-    document.querySelectorAll(".dropdown > a").forEach(link => {
+    document.querySelectorAll(".dropdown > a").forEach((link) => {
       link.addEventListener("click", (e) => {
         if (window.innerWidth <= 950) {
           e.preventDefault();
-          link.parentElement.classList.toggle("open");
+          if (link.parentElement) {
+            link.parentElement.classList.toggle("open");
+          }
         }
       });
     });
 
-    // 3. Search Toggle
+    // 3. Search Toggle & Keypress Logic
     if (searchButton && searchBox) {
       searchButton.addEventListener("click", () => {
-        const isHidden = searchBox.style.display === "none";
+        const isHidden = window.getComputedStyle(searchBox).display === "none";
         searchBox.style.display = isHidden ? "inline-block" : "none";
         if (isHidden) searchBox.focus();
       });
-      // 4. NEW: Search Execution Logic
 
-searchBox.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        const query = searchBox.value.toLowerCase().trim();
+      searchBox.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const query = searchBox.value.toLowerCase().trim();
+          if (!query) return;
 
-        // Instead of searching the HTML, we "fetch" the map of your site
-        fetch("./pages.json")
-            .then(res => res.json())
-            .then(data => {
-                // Look for the page that matches the search
-                const match = data.find(p => p.content.toLowerCase().includes(query));
+          fetch("./search.json")
+            .then((res) => {
+              if (!res.ok) throw new Error("search.json not found");
+              return res.json();
+            })
+            .then((data) => {
+              const match = data.find((p) => {
+                const title = p.title ? p.title.toLowerCase() : "";
+                const content = p.content ? p.content.toLowerCase() : "";
+                return title.includes(query) || content.includes(query);
+              });
 
-                if (match) {
-                    window.location.href = match.url; // GO to the page!
-                } else {
-                    alert("We couldn't find anything for '" + query + "'");
-                }
+              if (match && match.url) {
+                window.location.href = match.url;
+              } else {
+                alert("We couldn't find anything for '" + query + "'");
+              }
+            })
+            .catch((err) => {
+              console.error("Search fetch error:", err);
+              alert("Could not load search data. Ensure search.json exists.");
             });
-    }
-});
-          // Optional: Close the search box after searching
-          // searchBox.style.display = "none";
         }
       });
-  .catch(err => console.error("Nav load error:", err));
     }
   })
-  .catch(err => console.error("Nav load error:", err));
+  .catch((err) => console.error("Nav load error:", err));
 
 // Calendar logic
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("month-toggle")) {
     const table = e.target.nextElementSibling;
-    table.style.display = table.style.display === "table" ? "none" : "table";
+    if (table) {
+      const isHidden = window.getComputedStyle(table).display === "none";
+      table.style.display = isHidden ? "table" : "none";
+    }
   }
 });

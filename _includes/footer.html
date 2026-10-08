@@ -1,6 +1,22 @@
- <footer class="site-footer">
+<footer class="site-footer">
   <div class="footer-container">
-    <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-    <p>8629 Downsville Pike, Williamsport, MD 21795</p>
+    <!-- Brand / Address -->
+    <div class="footer-col">
+      <p class="brand-name"><strong>Downsville Ruritan Club</strong></p>
+      <p class="footer-address">📍 8629 Downsville Pike, Williamsport, MD 21795</p>
+    </div>
+
+    <!-- Quick Links (Facebook & Privacy Policy) -->
+    <div class="footer-col footer-links-simple">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+      <span class="divider">|</span>
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+      <span class="divider">|</span>
+      <a href="{{ '/contact.html' | relative_url }}">Contact Us</a>
+    </div>
   </div>
-</footer> 
+
+  <div class="footer-bottom">
+    <p>&copy; {{ 'now' | date: "%Y" }} Downsville Ruritan Club. All rights reserved.</p>
+  </div>
+</footer>

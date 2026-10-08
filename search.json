@@ -3,10 +3,10 @@ layout: null
 ---
 [
   {% for page in site.pages %}
-    {% if page.title and page.url != '/404.html' and page.url != '/search.json' %}
+    {% if page.title and page.url != '/search.json' %}
       {
-        "title": {{ page.title | jsonify }},
-        "url": {{ page.url | relative_url | jsonify }},
+        "title": {{ page.title | strip | jsonify }},
+        "url": {{ page.url | relative_url | strip | jsonify }},
         "content": {{ page.content | strip_html | strip_newlines | jsonify }}
       }{% unless forloop.last %},{% endunless %}
     {% endif %}
