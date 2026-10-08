@@ -317,7 +317,7 @@ input[type="submit"]:hover {
 }
 
 .month-table {
-  display: none; /* Controlled via JS toggle (.show) */
+  display: table; /* Controlled via JS toggle (.show) */
   width: 100%;
   margin-top: 0.5rem;
   border-collapse: collapse;
