@@ -34,46 +34,47 @@ fetch("./navbar.html")
     });
 
     // 3. Search Toggle & Keypress Logic
-    if (searchButton && searchBox) {
-      searchButton.addEventListener("click", () => {
-        const isHidden = window.getComputedStyle(searchBox).display === "none";
-        searchBox.style.display = isHidden ? "inline-block" : "none";
-        if (isHidden) searchBox.focus();
-      });
+if (searchButton && searchBox) {
+  searchButton.addEventListener("click", () => {
+    const isHidden = window.getComputedStyle(searchBox).display === "none";
+    searchBox.style.display = isHidden ? "inline-block" : "none";
+    if (isHidden) searchBox.focus();
+  });
 
-      searchBox.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          const query = searchBox.value.toLowerCase().trim();
-          if (!query) return;
+  searchBox.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const query = searchBox.value.toLowerCase().trim();
+      if (!query) return;
 
-          fetch("./search.json")
-            .then((res) => {
-              if (!res.ok) throw new Error("search.json not found");
-              return res.json();
-            })
-            .then((data) => {
-              const match = data.find((p) => {
-                const title = p.title ? p.title.toLowerCase() : "";
-                const content = p.content ? p.content.toLowerCase() : "";
-                return title.includes(query) || content.includes(query);
-              });
+      fetch("./search.json")
+        .then((res) => {
+          if (!res.ok) throw new Error("search.json not found");
+          return res.json();
+        })
+        .then((data) => {
+          // Ensure data is an array
+          const pages = Array.isArray(data) ? data : data.pages || [];
+          
+          const match = pages.find((p) => {
+            const title = p.title ? p.title.toLowerCase() : "";
+            const content = p.content ? p.content.toLowerCase() : "";
+            return title.includes(query) || content.includes(query);
+          });
 
-              if (match && match.url) {
-                window.location.href = match.url;
-              } else {
-                alert("We couldn't find anything for '" + query + "'");
-              }
-            })
-            .catch((err) => {
-              console.error("Search fetch error:", err);
-              alert("Could not load search data. Ensure search.json exists.");
-            });
-        }
-      });
+          if (match && match.url) {
+            window.location.href = match.url;
+          } else {
+            alert("We couldn't find anything for '" + query + "'");
+          }
+        })
+        .catch((err) => {
+          console.error("Search fetch error:", err);
+          alert("Could not load search data. Make sure search.json is generated and available.");
+        });
     }
-  })
-  .catch((err) => console.error("Nav load error:", err));
+  });
+}
 
 // Calendar logic
 document.addEventListener("click", (e) => {
