@@ -367,135 +367,93 @@ input[type="submit"]:hover {
 /* ==========================================================================
    EVENTS CALENDAR ACCORDION & TABLES
    ========================================================================== */
-.events-section {
-  margin: 3rem 0;
-}
-
 .month {
-  margin-bottom: 1rem;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
+    margin-bottom: 20px;
 }
 
-/* Month Accordion Buttons */
+/* Month buttons */
 .month-toggle {
-  width: 100%;
-  padding: 1rem 1.25rem;
-  background-color: var(--brand-blue);
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.2s ease;
+    width: 100%;
+    padding: 12px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
 
 .month-toggle:hover {
-  background-color: var(--brand-blue-dark);
-}
-
-.month-toggle::after {
-  content: "▼";
-  font-size: 0.8rem;
-  color: var(--brand-gold);
-  transition: transform 0.2s ease;
-}
-
-.month-toggle.active::after {
-  transform: rotate(180deg);
-}
-
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  background: var(--white);
+    background-color: #002244;
 }
 
 .month-table {
-  display: none; 
-  width: 100%;
-  border-collapse: collapse;
+    display: none; 
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .month-table.show {
-  display: table !important; 
+    display: table !important; 
 }
 
+/* Table styling */
 .month-table th,
 .month-table td {
-  border-bottom: 1px solid var(--border);
-  padding: 0.85rem 1.25rem;
-  text-align: left;
-  font-size: 0.95rem;
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
 }
 
 .month-table th {
-  background-color: var(--bg-soft);
-  color: var(--brand-blue-dark);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-}
-
-.month-table tr:hover {
-  background-color: #f1f5f9;
+    background-color: #ddd;
 }
 
 .month-table td a {
-  color: var(--brand-blue);
-  font-weight: 600;
-  text-decoration: none;
+    color: #003366;
+    text-decoration: none;
 }
 
 .month-table td a:hover {
-  color: var(--brand-gold-deep);
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Badges / Category Tags */
-.badge {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: var(--bg-soft);
-  color: var(--brand-blue);
-  text-transform: uppercase;
-}
-
-.badge-gold {
-  background: var(--brand-gold-soft);
-  color: var(--brand-gold-deep);
-}
-
-/* ==========================================================================
-   EVENTS & FLEXIBLE LAYOUTS
-   ========================================================================== */
+/* ==========================
+   8. EVENTS & LAYOUTS
+   ========================== */
 .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 2.5rem;
-  margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.left, .right {
-  width: 48%;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+.left {
+    width: 45%;
+    text-align: center;
+    height: 100%;
 }
 
+.right {
+    width: 45%;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.p2 {
+   text-align: left !important;
+}
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -504,13 +462,16 @@ footer {
   justify-content: space-between;
   align-items: center;
   max-width: 100%;
-  margin-top: 4rem;
-  padding: 2.5rem 2rem;
-  background: var(--brand-blue-dark);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: var(--brand-blue);
   color: var(--white);
-  border-top: 4px solid var(--brand-gold);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid var(--brand-gold);
 }
-
 .footer-inner {
   display: flex;
   justify-content: space-between;
