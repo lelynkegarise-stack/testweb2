@@ -52,6 +52,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  text-align: center;
 }
 
 a {
@@ -67,12 +68,14 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem;
+  text-align: center;
 }
 
 /* Typography Defaults */
@@ -80,11 +83,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-blue-dark);
   margin-top: 0;
   line-height: 1.25;
+  text-align: center;
 }
 
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .p2 {
@@ -137,6 +142,7 @@ ul.dropdown-content li {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   text-decoration: none;
   color: var(--white);
@@ -152,6 +158,7 @@ ul.dropdown-content li {
 .menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.75rem;
 }
 
@@ -201,6 +208,7 @@ ul.dropdown-content li {
   padding: 0.6rem 1.2rem;
   display: block;
   font-weight: 500;
+  text-align: left;
 }
 
 .dropdown-content li a:hover {
@@ -287,8 +295,7 @@ button.button:hover,
 form button:hover, 
 input[type="submit"]:hover {
   background: var(--brand-gold-deep);
-  transform: traranslateY(-2px);
-}nslateY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(217, 142, 4, 0.4);
 }
 
@@ -302,7 +309,8 @@ input[type="submit"]:hover {
 .button.secondary:hover {
   background: var(--brand-blue);
   color: var(--white);
-  transform: t
+  transform: translateY(-2px);
+}
 
 /* ==========================================================================
    HIGHLIGHT CARDS
@@ -326,6 +334,7 @@ input[type="submit"]:hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .highlight-card::before {
@@ -369,30 +378,40 @@ input[type="submit"]:hover {
    ========================================================================== */
 .month {
     margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Month buttons */
 .month-toggle {
     width: 100%;
     padding: 12px;
-    background-color: #003366;
+    background-color: var(--brand-blue);
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
     text-align: left;
     margin-bottom: 5px;
     border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
 .month-toggle:hover {
-    background-color: #002244;
+    background-color: var(--brand-blue-dark);
 }
 
 .month-table {
     display: none; 
     width: 100%;
     border-collapse: collapse;
+    background: var(--white);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 .month-table.show {
@@ -402,17 +421,18 @@ input[type="submit"]:hover {
 /* Table styling */
 .month-table th,
 .month-table td {
-    border: 1px solid #333;
-    padding: 10px;
+    border: 1px solid var(--border);
+    padding: 12px;
     text-align: left;
 }
 
 .month-table th {
-    background-color: #ddd;
+    background-color: var(--bg-soft);
+    color: var(--brand-blue-dark);
 }
 
 .month-table td a {
-    color: #003366;
+    color: var(--brand-blue);
     text-decoration: none;
 }
 
@@ -421,11 +441,12 @@ input[type="submit"]:hover {
 }
 
 /* ==========================
-   8. EVENTS & LAYOUTS
+   EVENTS & LAYOUTS
    ========================== */
 .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .left {
@@ -439,21 +460,6 @@ input[type="submit"]:hover {
     text-align: center;
 }
 
-p {
-    text-align: center;
-}
-
-h4 {
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-}
-
-.p2 {
-   text-align: left !important;
-}
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -469,6 +475,7 @@ footer {
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
   border-top: 3px solid var(--brand-gold);
 }
+
 .footer-inner {
   display: flex;
   justify-content: space-between;
@@ -478,6 +485,7 @@ footer {
   margin: 0 auto;
   flex-wrap: wrap;
   gap: 1.5rem;
+  text-align: center;
 }
 
 footer a {
@@ -494,6 +502,7 @@ footer p {
   margin: 0;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -514,7 +523,6 @@ footer p {
     padding: 2rem 1rem;
   }
 
-  /* Stack main section columns vertically on mobile */
   .container {
     flex-direction: column;
     gap: 1.5rem;
@@ -524,18 +532,17 @@ footer p {
     width: 100%;
   }
 
-  /* Navigation adjustments */
   .menu {
     flex-direction: column;
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
     padding-top: 1rem;
   }
 
   .nav-wrapper {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .dropdown-content {
@@ -549,6 +556,7 @@ footer p {
 
   .dropdown-content li a {
     color: var(--white);
+    text-align: center;
   }
 
   .dropdown-content li a:hover {
@@ -556,12 +564,10 @@ footer p {
     color: var(--brand-gold);
   }
 
-  /* Hero Section */
   .intro {
     padding: 2.5rem 1rem 2rem;
   }
 
-  /* Footer */
   footer {
     padding: 2rem 1rem;
   }
