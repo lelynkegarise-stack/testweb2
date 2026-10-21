@@ -463,14 +463,11 @@ footer {
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 2rem;
   background: var(--brand-blue);
   color: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-bottom: 3px solid var(--brand-gold);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  border-top: 3px solid var(--brand-gold);
 }
 .footer-inner {
   display: flex;
