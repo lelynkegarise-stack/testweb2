@@ -1,239 +1,40 @@
 /* ==========================================================================
-   RURITAN CLUB - GLOBAL THEME & BASE STYLES
-   ========================================================================== */
-:root {
-  /* Official Ruritan Palette */
-  --brand-blue: #003366;          /* Deep Ruritan Navy Blue */
-  --brand-blue-dark: #002244;     /* Darker accent blue */
-  --brand-blue-light: #1a4d80;    /* Hover / header blue */
-  --brand-gold: #f3a812;          /* Warm Ruritan Gold/Yellow */
-  --brand-gold-deep: #d98e04;     /* Button hover gold */
-  --brand-gold-soft: #fef5e7;     /* Light gold tint for highlights */
-  
-  /* Modern UI Variables */
-  --primary: var(--brand-blue);
-  --primary-dark: var(--brand-blue-dark);
-  --primary-light: var(--brand-blue-light);
-  --accent: var(--brand-gold);
-  
-  /* Backgrounds & Surfaces */
-  --bg-page: #f8fafc;
-  --bg-soft: #f0f4f8;
-  --white: #ffffff;
-  
-  /* Typography & Borders */
-  --text: #1e293b;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --border-light: rgba(226, 232, 240, 0.8);
-  
-  /* Shadows & Layout */
-  --radius: 12px;
-  --radius-sm: 6px;
-  --shadow: 0 4px 15px rgba(0, 51, 102, 0.08);
-  --shadow-hover: 0 10px 25px rgba(0, 51, 102, 0.15);
-  --max-width: 1100px;
-}
-
-/* Base Reset */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg-page);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-a {
-  color: var(--brand-blue);
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--brand-blue-light);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-}
-
-/* Typography Defaults */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--brand-blue-dark);
-  margin-top: 0;
-  line-height: 1.25;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.p2 {
-  text-align: left !important;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* ==========================================================================
-   NAVIGATION BAR
-   ========================================================================== */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  background: var(--brand-blue);
-  color: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-bottom: 3px solid var(--brand-gold);
-}
-
-.nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-nav ul, 
-nav li, 
-ul.menu, 
-ul.menu li, 
-ul.dropdown-content, 
-ul.dropdown-content li {
-  list-style: none !important;
-  margin: 0;
-  padding: 0;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.logo img {
-  height: 48px;
-  width: auto;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-}
-
-.menu li {
-  position: relative;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.5rem 0;
-  transition: color 0.2s ease;
-}
-
-.menu li a:hover {
-  color: var(--brand-gold);
-}
-
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-hover);
-  padding: 0.5rem 0;
-  display: none;
-  min-width: 200px;
-  z-index: 10;
-  border-top: 3px solid var(--brand-gold);
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-  display: block;
-}
-
-.dropdown-content li a {
-  color: var(--text);
-  padding: 0.6rem 1.2rem;
-  display: block;
-  font-weight: 500;
-}
-
-.dropdown-content li a:hover {
-  background: var(--bg-soft);
-  color: var(--brand-blue);
-}
-
-/* ==========================================================================
-   HERO / INTRO SECTION
+   HERO / INTRO SECTION & NON-PROFIT HERO IMAGE
    ========================================================================== */
 .intro {
   text-align: center;
-  padding: 4rem 1.5rem 3.5rem;
+  padding: 3.5rem 1.5rem 3rem;
   background: linear-gradient(180deg, #e6f0fa 0%, var(--bg-page) 100%);
   border-bottom: 1px solid var(--border);
 }
 
 .intro-content {
-  max-width: 780px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+/* Ruritan Motto Badge */
+.motto-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-gold-soft);
+  color: var(--brand-gold-deep);
+  border: 1px solid rgba(217, 142, 4, 0.3);
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--brand-blue);
-  margin-bottom: 0.75rem;
-  display: inline-block;
-  background: rgba(0, 51, 102, 0.08);
-  padding: 0.25rem 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
   border-radius: 99px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.motto-badge::before {
+  content: "★";
+  color: var(--brand-gold);
+  font-size: 0.9rem;
 }
 
 .intro h1 {
@@ -248,368 +49,127 @@ ul.dropdown-content li {
   color: var(--muted);
   font-size: 1.125rem;
   line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
 }
 
-/* ==========================================================================
-   BUTTONS
-   ========================================================================== */
-.btn-row {
+/* Non-Profit Hero Image Container */
+.hero-image-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 51, 102, 0.18);
+  border: 4px solid var(--white);
+  outline: 2px solid var(--border-light);
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-image-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+/* Subtle Gradient Overlay for Text Readability */
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(0, 34, 68, 0.25) 0%, 
+    rgba(0, 34, 68, 0.65) 100%
+  );
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.button, 
-button.button, 
-form button, 
-input[type="submit"] {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem 1.85rem;
-  border-radius: 99px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  background: var(--brand-gold);
-  color: var(--brand-blue-dark);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(243, 168, 18, 0.3);
-}
-
-.button:hover, 
-button.button:hover, 
-form button:hover, 
-input[type="submit"]:hover {
-  background: var(--brand-gold-deep);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(217, 142, 4, 0.4);
-}
-
-.button.secondary {
-  background: transparent;
-  color: var(--brand-blue-dark);
-  border: 2px solid var(--brand-blue);
-  box-shadow: none;
-}
-
-.button.secondary:hover {
-  background: var(--brand-blue);
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  text-align: left;
   color: var(--white);
-  transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   HIGHLIGHT CARDS
-   ========================================================================== */
-.highlights {
-  margin: 4rem 0;
+.hero-image-overlay h2 {
+  color: var(--white);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.highlight-grid {
+.hero-image-overlay p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-bottom: 0;
+  max-width: 600px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Non-Profit Community Impact Counters Below Image */
+.impact-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.highlight-card {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
   background: var(--white);
-  padding: 2.25rem 2rem;
+  padding: 1.5rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-.highlight-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--brand-gold);
-  opacity: 0;
-  transition: opacity 0.25s ease;
+.stat-card {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-right: 1px solid var(--border);
 }
 
-.highlight-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--border-light);
+.stat-card:last-child {
+  border-right: none;
 }
 
-.highlight-card:hover::before {
-  opacity: 1;
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand-blue);
+  line-height: 1;
+  margin-bottom: 0.25rem;
 }
 
-.highlight-card h2 {
-  color: var(--brand-blue-dark);
-  font-size: 1.35rem;
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-}
-
-.highlight-card p {
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--muted);
-  margin: 0;
-  font-size: 0.975rem;
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   EVENTS CALENDAR ACCORDION & TABLES
-   ========================================================================== */
-.events-section {
-  margin: 3rem 0;
-}
-
-.month {
-  margin-bottom: 1rem;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
-
-/* Month Accordion Buttons */
-.month-toggle {
-  width: 100%;
-  padding: 1rem 1.25rem;
-  background-color: var(--brand-blue);
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.2s ease;
-}
-
-.month-toggle:hover {
-  background-color: var(--brand-blue-dark);
-}
-
-.month-toggle::after {
-  content: "▼";
-  font-size: 0.8rem;
-  color: var(--brand-gold);
-  transition: transform 0.2s ease;
-}
-
-.month-toggle.active::after {
-  transform: rotate(180deg);
-}
-
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  background: var(--white);
-}
-
-.month-table {
-  display: none; 
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.month-table.show {
-  display: table !important; 
-}
-
-.month-table th,
-.month-table td {
-  border-bottom: 1px solid var(--border);
-  padding: 0.85rem 1.25rem;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.month-table th {
-  background-color: var(--bg-soft);
-  color: var(--brand-blue-dark);
-  font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.8rem;
   letter-spacing: 0.05em;
 }
 
-.month-table tr:hover {
-  background-color: #f1f5f9;
-}
-
-.month-table td a {
-  color: var(--brand-blue);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.month-table td a:hover {
-  color: var(--brand-gold-deep);
-  text-decoration: underline;
-}
-
-/* Badges / Category Tags */
-.badge {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: var(--bg-soft);
-  color: var(--brand-blue);
-  text-transform: uppercase;
-}
-
-.badge-gold {
-  background: var(--brand-gold-soft);
-  color: var(--brand-gold-deep);
-}
-
-/* ==========================================================================
-   EVENTS & FLEXIBLE LAYOUTS
-   ========================================================================== */
-.container {
-  display: flex;
-  justify-content: space-between;
-  gap: 2.5rem;
-  margin: 2rem 0;
-}
-
-.left, .right {
-  width: 48%;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  margin-top: 4rem;
-  padding: 2.5rem 2rem;
-  background: var(--brand-blue-dark);
-  color: var(--white);
-  border-top: 4px solid var(--brand-gold);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-footer a {
-  color: var(--brand-gold);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* ==========================================================================
-   MEDIA QUERIES FOR MOBILE & TABLETS
-   ========================================================================== */
-@media (max-width: 868px) {
-  nav {
-    padding: 1rem;
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-image-wrapper img {
+    height: 280px;
   }
   
-  .menu {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 2rem 1rem;
+  .hero-image-overlay {
+    padding: 1.25rem;
   }
 
-  /* Stack main section columns vertically on mobile */
-  .container {
-    flex-direction: column;
-    gap: 1.5rem;
+  .hero-image-overlay h2 {
+    font-size: 1.35rem;
   }
 
-  .left, .right {
-    width: 100%;
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
   }
 
-  /* Navigation adjustments */
-  .menu {
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding-top: 1rem;
-  }
-
-  .nav-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    border-top: none;
-    background: var(--brand-blue-light);
-    margin-top: 0.5rem;
-    border-radius: 4px;
-  }
-
-  .dropdown-content li a {
-    color: var(--white);
-  }
-
-  .dropdown-content li a:hover {
-    background: var(--brand-blue);
-    color: var(--brand-gold);
-  }
-
-  /* Hero Section */
-  .intro {
-    padding: 2.5rem 1rem 2rem;
-  }
-
-  /* Footer */
-  footer {
-    padding: 2rem 1rem;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
+  .stat-card:last-child {
+    border-bottom: none;
   }
 }
