@@ -138,12 +138,19 @@ ul.dropdown-content li {
   margin: 0;
   padding: 0;
 }
-.nav-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff; /* Or whatever matches your navbar */
-  margin: 5px 0;
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* 2. Show the hamburger toggle only on smaller mobile screens */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block
+  }
 }
 .logo {
   display: flex;
@@ -162,7 +169,7 @@ ul.dropdown-content li {
 }
 
 .menu {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 1.75rem;
