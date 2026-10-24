@@ -139,7 +139,7 @@ ul.dropdown-content li {
   padding: 0;
 }
 .nav-toggle {
-  display: none;
+  display: flex;
   background: transparent;
   border: none;
   cursor: pointer;
