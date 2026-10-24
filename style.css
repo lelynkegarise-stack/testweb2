@@ -42,6 +42,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -53,6 +54,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   text-align: center;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -84,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   line-height: 1.25;
   text-align: center;
+  word-break: break-word;
 }
 
 p {
@@ -109,7 +112,7 @@ nav {
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   background: var(--brand-blue);
   color: var(--white);
   position: sticky;
@@ -160,15 +163,15 @@ ul.dropdown-content li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   text-decoration: none;
   color: var(--white);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .logo img {
-  height: 48px;
+  height: 38px;
   width: auto;
 }
 
@@ -238,7 +241,7 @@ ul.dropdown-content li {
    ========================================================================== */
 .intro {
   text-align: center;
-  padding: 4rem 1.5rem 3.5rem;
+  padding: 3rem 1rem 2.5rem;
   background: linear-gradient(180deg, #e6f0fa 0%, var(--bg-page) 100%);
   border-bottom: 1px solid var(--border);
 }
@@ -252,9 +255,9 @@ ul.dropdown-content li {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--brand-blue);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
   background: rgba(0, 51, 102, 0.08);
   padding: 0.25rem 0.75rem;
@@ -262,17 +265,17 @@ ul.dropdown-content li {
 }
 
 .intro h1 {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
   color: var(--brand-blue-dark);
-  margin: 0 0 1rem;
-  line-height: 1.15;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
   font-weight: 800;
 }
 
 .intro p {
   color: var(--muted);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -282,8 +285,8 @@ ul.dropdown-content li {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -294,10 +297,10 @@ input[type="submit"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 1.85rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 99px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
   background: var(--brand-gold);
   color: var(--brand-blue-dark);
@@ -333,18 +336,18 @@ input[type="submit"]:hover {
    HIGHLIGHT CARDS
    ========================================================================== */
 .highlights {
-  margin: 4rem 0;
+  margin: 2.5rem 0;
 }
 
 .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 
 .highlight-card {
   background: var(--white);
-  padding: 2.25rem 2rem;
+  padding: 1.75rem 1.25rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
@@ -374,4 +377,253 @@ input[type="submit"]:hover {
 
 .highlight-card:hover::before {
   opacity: 1;
+}
+
+.highlight-card h2 {
+  color: var(--brand-blue-dark);
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   EVENTS CALENDAR ACCORDION & TABLES
+   ========================================================================== */
+.month {
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Month buttons */
+.month-toggle {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--brand-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.month-toggle:hover {
+  background-color: var(--brand-blue-dark);
+}
+
+/* Responsive table container wrapper for mobile scrolling */
+.month-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 10px;
+}
+
+.month-table {
+  display: none; 
+  width: 100%;
+  min-width: 450px; /* Prevents cell crunching on narrow phones */
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.month-table.show {
+  display: table !important; 
+}
+
+/* Table styling */
+.month-table th,
+.month-table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.month-table th {
+  background-color: var(--bg-soft);
+  color: var(--brand-blue-dark);
+}
+
+.month-table td a {
+  color: var(--brand-blue);
+  text-decoration: none;
+}
+
+.month-table td a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   EVENTS & LAYOUTS
+   ========================== */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  width: 45%;
+  text-align: center;
+  height: 100%;
+}
+
+.right {
+  width: 45%;
+  text-align: center;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: var(--brand-blue);
+  color: var(--white);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  border-top: 3px solid var(--brand-gold);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--brand-gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES FOR MOBILE & TABLETS
+   ========================================================================== */
+@media (max-width: 868px) {
+  nav {
+    padding: 0.75rem 1rem;
+  }
+  
+  .menu {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  /* Make buttons stretch nicely on narrow phone screens */
+  .btn-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button, 
+  button.button, 
+  form button, 
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  /* Mobile menu behavior */
+  .menu {
+    display: none; /* Hidden by default on mobile until toggled */
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+
+  /* Add this class via JS when hamburger is clicked */
+  .menu.active {
+    display: flex;
+  }
+
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border-top: none;
+    background: var(--brand-blue-light);
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .dropdown-content li a {
+    color: var(--white);
+    text-align: center;
+  }
+
+  .dropdown-content li a:hover {
+    background: var(--brand-blue);
+    color: var(--brand-gold);
+  }
+
+  .intro {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
 }
