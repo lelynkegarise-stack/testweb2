@@ -1,69 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
+---
+layout: default
+title: "Williamsport Carnival | Downsville Ruritan | June 2026 Events"
+description: "Williamsport Carnival sponsored by the Downsville Ruritan Club. June 17-20, 2026 at Byron Memorial Park. Food, games, and family fun in Williamsport, Maryland."
+keywords: "Williamsport Carnival 2026, Downsville Ruritan carnival, Byron Memorial Park events, Maryland carnival, family events Williamsport"
+---
 
-<body>
-<div id="navbar"></div>
-<script>
-
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-
-</script>
-<h1>Williamsport Carnival<br><br>
-<img src="carnival.png" alt="carnival" width="500">
-</h1>
+<h1>Williamsport Carnival</h1>
+<img src="images/carnival.png" alt="Williamsport Carnival at Byron Memorial Park" width="500">
 
 <div class="container">
-
-<div class="left">
-  <br><br><br>
-<h3>Dates & Times</h3>
-Dates: 6/17/26 - 6/20/26<br>
-Wednesday 6/17 5:00 pm - 10:00 pm<br>
-Thursday 6/18 5:00 pm - 10:00 pm<br>
-Friday 6/19 5:00 pm - 11:00 pm<br>
-Saturday 6/20 5:00 pm - 11:00 pm<br>
-<h4>Description</h4>
-
-<p>
-Williamsport Carnival sponsored by the Downsville Ruritan.<br>
-Downsville Ruritan sponsors the carnival and runs the food and tip jars.<br>
-To preorder tickets contact Brad Kegarise at 301-331-6478<br>
-For more information visit our 
-<a href="https://www.facebook.com/events/2199822897164882">Facebook</a>.
-</p>
+  <div class="left">
+    <h2>Dates & Times</h2>
+    <p><strong>June 17-20, 2026</strong></p>
+    <ul>
+      <li>Wednesday 6/17: 5:00 PM - 10:00 PM</li>
+      <li>Thursday 6/18: 5:00 PM - 10:00 PM</li>
+      <li>Friday 6/19: 5:00 PM - 11:00 PM</li>
+      <li>Saturday 6/20: 5:00 PM - 11:00 PM</li>
+    </ul>
+    
+    <h2>Description</h2>
+    <p>
+      The Williamsport Carnival is sponsored by the Downsville Ruritan Club and is one of the biggest family events in the Williamsport area. The Downsville Ruritan sponsors and operates the food vendors and tip jar games.
+    </p>
+    <p>
+      <strong>To pre-order tickets:</strong> Contact Brad Kegarise at 301-331-6478
+    </p>
+    <p>
+      For more information, visit our <a href="https://www.facebook.com/events/2199822897164882">Facebook event page</a>.
+    </p>
+  </div>
+  
+  <div class="right">
+    <h2>Location</h2>
+    <p>
+      Byron Memorial Park<br>
+      11 Park Road<br>
+      Williamsport, MD 21795
+    </p>
+    <iframe
+      src="https://www.google.com/maps?q=39.5993902,-77.8159998&output=embed"
+      width="100%" height="250" style="border:0;" title="Byron Memorial Park location on map">
+    </iframe>
+  </div>
 </div>
-
-<div class="right">
-<h3>Location</h3>
-Byron Memorial Park<br>
-11 Park Rd
-Williamsport, MD 21795<br><br>
-
-<iframe
-src="https://www.google.com/maps?q=39.5993902,-77.8159998&output=embed"
-width="100%" height="250" style="border:0;">
-</iframe>
-
-</div>
-
-</div>
-
-  <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-  <script src="style.js"></script>
-</body>
-</html>
