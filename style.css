@@ -2,32 +2,27 @@
    RURITAN CLUB - GLOBAL THEME & BASE STYLES
    ========================================================================== */
 :root {
-  /* Official Ruritan Palette */
-  --brand-blue: #003366;         /* Deep Ruritan Navy Blue */
-  --brand-blue-dark: #002244;     /* Darker accent blue */
-  --brand-blue-light: #1a4d80;    /* Hover / header blue */
-  --brand-gold: #f3a812;          /* Warm Ruritan Gold/Yellow */
-  --brand-gold-deep: #d98e04;     /* Button hover gold */
-  --brand-gold-soft: #fef5e7;     /* Light gold tint for highlights */
+  --brand-blue: #003366;
+  --brand-blue-dark: #002244;
+  --brand-blue-light: #1a4d80;
+  --brand-gold: #f3a812;
+  --brand-gold-deep: #d98e04;
+  --brand-gold-soft: #fef5e7;
   
-  /* Modern UI Variables */
   --primary: var(--brand-blue);
   --primary-dark: var(--brand-blue-dark);
   --primary-light: var(--brand-blue-light);
   --accent: var(--brand-gold);
   
-  /* Backgrounds & Surfaces */
   --bg-page: #f8fafc;
   --bg-soft: #f0f4f8;
   --white: #ffffff;
   
-  /* Typography & Borders */
   --text: #1e293b;
   --muted: #64748b;
   --border: #e2e8f0;
   --border-light: rgba(226, 232, 240, 0.8);
   
-  /* Shadows & Layout */
   --radius: 12px;
   --radius-sm: 6px;
   --shadow: 0 4px 15px rgba(0, 51, 102, 0.08);
@@ -107,12 +102,7 @@ p {
    NAVIGATION BAR
    ========================================================================== */
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
+  width: 100%;
   background: var(--brand-blue);
   color: var(--white);
   position: sticky;
@@ -129,6 +119,7 @@ nav {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0.75rem 1rem;
 }
 
 nav ul, 
@@ -150,13 +141,6 @@ ul.dropdown-content li {
   padding: 0.5rem;
   color: var(--white);
   font-size: 1.5rem;
-}
-
-/* Show the hamburger toggle only on smaller mobile screens */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
 }
 
 .logo {
@@ -403,7 +387,6 @@ input[type="submit"]:hover {
   margin-right: auto;
 }
 
-/* Month buttons */
 .month-toggle {
   width: 100%;
   padding: 12px;
@@ -423,7 +406,6 @@ input[type="submit"]:hover {
   background-color: var(--brand-blue-dark);
 }
 
-/* Responsive table container wrapper for mobile scrolling */
 .month-table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -434,7 +416,7 @@ input[type="submit"]:hover {
 .month-table {
   display: none; 
   width: 100%;
-  min-width: 450px; /* Prevents cell crunching on narrow phones */
+  min-width: 450px;
   border-collapse: collapse;
   background: var(--white);
   border-radius: 5px;
@@ -446,7 +428,6 @@ input[type="submit"]:hover {
   display: table !important; 
 }
 
-/* Table styling */
 .month-table th,
 .month-table td {
   border: 1px solid var(--border);
@@ -478,13 +459,7 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-.left {
-  width: 45%;
-  text-align: center;
-  height: 100%;
-}
-
-.right {
+.left, .right {
   width: 45%;
   text-align: center;
 }
@@ -493,12 +468,7 @@ input[type="submit"]:hover {
    FOOTER
    ========================================================================== */
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  width: 100%;
   background: var(--brand-blue);
   color: var(--white);
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
@@ -512,6 +482,7 @@ footer {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 2rem 1rem;
   flex-wrap: wrap;
   gap: 1rem;
   text-align: center;
@@ -535,18 +506,8 @@ footer p {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES FOR MOBILE & TABLETS
+   MEDIA QUERIES FOR MOBILE & TABLETS (≤ 768px)
    ========================================================================== */
-@media (max-width: 868px) {
-  nav {
-    padding: 0.75rem 1rem;
-  }
-  
-  .menu {
-    gap: 1rem;
-  }
-}
-
 @media (max-width: 768px) {
   main {
     padding: 1.5rem 1rem;
@@ -561,7 +522,6 @@ footer p {
     width: 100%;
   }
 
-  /* Make buttons stretch nicely on narrow phone screens */
   .btn-row {
     flex-direction: column;
     width: 100%;
@@ -574,24 +534,29 @@ footer p {
     width: 100%;
   }
 
-  /* Mobile menu behavior */
+  /* --- FIXED MOBILE NAVBAR STYLING --- */
+  .nav-toggle {
+    display: block; /* Show hamburger button on mobile */
+  }
+
+  .nav-wrapper {
+    flex-wrap: wrap; /* Allows the menu to drop below logo row */
+  }
+
   .menu {
-    display: none; /* Hidden by default on mobile until toggled */
+    display: none; /* Hidden by default until toggled */
     flex-direction: column;
     width: 100%;
     align-items: center;
     gap: 0.75rem;
-    padding-top: 1rem;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0.75rem;
   }
 
-  /* Add this class via JS when hamburger is clicked */
+  /* This class is turned on via JavaScript when hamburger is clicked */
   .menu.active {
-    display: flex;
-  }
-
-  .nav-wrapper {
-    flex-direction: column;
-    align-items: center;
+    display: flex !important;
   }
 
   .dropdown-content {
@@ -601,7 +566,6 @@ footer p {
     background: var(--brand-blue-light);
     margin-top: 0.5rem;
     border-radius: 4px;
-    width: 100%;
   }
 
   .dropdown-content li a {
@@ -616,10 +580,6 @@ footer p {
 
   .intro {
     padding: 2rem 1rem 1.5rem;
-  }
-
-  footer {
-    padding: 1.5rem 1rem;
   }
 
   .footer-inner {
