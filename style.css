@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
   /* Official Ruritan Palette */
-  --brand-blue: #003366;          /* Deep Ruritan Navy Blue */
+  --brand-blue: #003366;         /* Deep Ruritan Navy Blue */
   --brand-blue-dark: #002244;     /* Darker accent blue */
   --brand-blue-light: #1a4d80;    /* Hover / header blue */
   --brand-gold: #f3a812;          /* Warm Ruritan Gold/Yellow */
@@ -138,20 +138,24 @@ ul.dropdown-content li {
   margin: 0;
   padding: 0;
 }
+
 .nav-toggle {
-  display: flex;
+  display: none;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  color: var(--white);
+  font-size: 1.5rem;
 }
 
-/* 2. Show the hamburger toggle only on smaller mobile screens */
+/* Show the hamburger toggle only on smaller mobile screens */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block
+    display: block;
   }
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -169,7 +173,7 @@ ul.dropdown-content li {
 }
 
 .menu {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.75rem;
@@ -370,223 +374,4 @@ input[type="submit"]:hover {
 
 .highlight-card:hover::before {
   opacity: 1;
-}
-
-.highlight-card h2 {
-  color: var(--brand-blue-dark);
-  font-size: 1.35rem;
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-}
-
-.highlight-card p {
-  color: var(--muted);
-  margin: 0;
-  font-size: 0.975rem;
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   EVENTS CALENDAR ACCORDION & TABLES
-   ========================================================================== */
-.month {
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Month buttons */
-.month-toggle {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--brand-blue);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: left;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-}
-
-.month-toggle:hover {
-    background-color: var(--brand-blue-dark);
-}
-
-.month-table {
-    display: none; 
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--white);
-    margin-bottom: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.month-table.show {
-    display: table !important; 
-}
-
-/* Table styling */
-.month-table th,
-.month-table td {
-    border: 1px solid var(--border);
-    padding: 12px;
-    text-align: left;
-}
-
-.month-table th {
-    background-color: var(--bg-soft);
-    color: var(--brand-blue-dark);
-}
-
-.month-table td a {
-    color: var(--brand-blue);
-    text-decoration: none;
-}
-
-.month-table td a:hover {
-    text-decoration: underline;
-}
-
-/* ==========================
-   EVENTS & LAYOUTS
-   ========================== */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.left {
-    width: 45%;
-    text-align: center;
-    height: 100%;
-}
-
-.right {
-    width: 45%;
-    text-align: center;
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  background: var(--brand-blue);
-  color: var(--white);
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-  border-top: 3px solid var(--brand-gold);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  text-align: center;
-}
-
-footer a {
-  color: var(--brand-gold);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-}
-
-/* ==========================================================================
-   MEDIA QUERIES FOR MOBILE & TABLETS
-   ========================================================================== */
-@media (max-width: 868px) {
-  nav {
-    padding: 1rem;
-  }
-  
-  .menu {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 2rem 1rem;
-  }
-
-  .container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .left, .right {
-    width: 100%;
-  }
-
-  .menu {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 0.75rem;
-    padding-top: 1rem;
-  }
-
-  .nav-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    border-top: none;
-    background: var(--brand-blue-light);
-    margin-top: 0.5rem;
-    border-radius: 4px;
-  }
-
-  .dropdown-content li a {
-    color: var(--white);
-    text-align: center;
-  }
-
-  .dropdown-content li a:hover {
-    background: var(--brand-blue);
-    color: var(--brand-gold);
-  }
-
-  .intro {
-    padding: 2.5rem 1rem 2rem;
-  }
-
-  footer {
-    padding: 2rem 1rem;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
 }
