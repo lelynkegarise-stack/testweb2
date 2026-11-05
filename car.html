@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-<div id="navbar"></div>
-<script>
-
-fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-
-</script>
+---
+layout: default
+title: "Annual Car Show"
+---
 <h1>Annnual Car Show<br><br>
-<img src="carshow.png" alt="car show" width="500">
+<img src="images/carshow.png" alt="car show" width="500">
 </h1>
 
 <div class="container">
@@ -25,7 +11,7 @@ fetch("navbar.html")
 <div class="left">
   <br>
 <h3>Dates & Times</h3>
-Saturday, August 15, 2026<br>
+Saturday, August 14, 2027<br>
 8:00 am - 2:00 pm<br>
 Registration 8:00 am - 10:00 am<br>
 Jusging 12:00 pm - 1:00 pm <br>
@@ -39,7 +25,7 @@ No pre registration required, $12 registration fee<br>
 Open to all vehicles, 100 car limit due to parking<br>
 Alcohol and pets prohibited<br>
    
-<a href="https://www.facebook.com/events/1222960242645529/">Facebook</a>.
+<a href="https://www.facebook.com/events/1227085357032561">Facebook</a>.
 </p>
 </div>
 
@@ -59,16 +45,4 @@ width="100%" height="250" style="border:0;">
 </div>
 
 </div>
-
-  <div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-  <script src="style.js"></script>
-</body>
-</html>
 
